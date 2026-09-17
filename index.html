@@ -3,45 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>You News — Windows masaüstü haber okuyucu</title>
-  <meta name="description" content="You News: Windows masaüstü RSS okuyucu. Veri yerelde kalır. AI anahtarı size aittir.">
+  <title data-i18n="title_home">You News — Windows masaüstü haber okuyucu</title>
+  <meta name="description" data-i18n-attr="content:desc_home" content="You News: Windows masaüstü RSS okuyucu. Veri yerelde kalır. AI anahtarı size aittir.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/you_news_icon.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="i18n.js" defer></script>
 </head>
 <body>
   <header>
-    <a class="brand" href="index.html">You News</a>
-    <nav>
-      <a href="disclaimer.html">Uyarılar</a>
-      <a href="privacy.html">Gizlilik</a>
-      <a href="refund.html">İade</a>
-    </nav>
-  </header>
-  <main>
-    <p class="lead">Windows masaüstü haber okuyucu</p>
-    <h1>Dünya haberleri, piyasalar ve AI brifingi tek ekranda.</h1>
-    <p>You News bu bilgisayarda çalışır. Manşetler ve ayarlar yerelde kalır. Özet ve çeviri için kendi API anahtarınızı veya yerel Ollama’yı kullanırsınız; model erişimi satılmaz.</p>
-    <div class="card">
-      <p class="price">$24.99 <span class="note">tek seferlik · Windows</span></p>
-      <p><a class="btn" id="buy" href="https://younews.lemonsqueezy.com/checkout/buy/77946ed5-6bcf-49ca-a9ef-69dcfd258c35" target="_blank" rel="noopener">Satın al</a></p>
-      <p class="note">Ödeme tek kasadan (Lemon Squeezy) alınır. Microsoft Store ayrı bir vitrin olabilir; bu sitede ikinci ödeme yöntemi yoktur.</p>
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/you_news_icon.png" alt="You News">
+        <span>YOU <em>NEWS</em></span>
+      </a>
+      <nav>
+        <a class="active" href="index.html" data-i18n="nav_home">Ana sayfa</a>
+        <a href="disclaimer.html" data-i18n="nav_disclaimer">Uyarılar</a>
+        <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
+        <a href="refund.html" data-i18n="nav_refund">İade</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </nav>
     </div>
-    <h2>Ne işe yarar</h2>
-    <ul>
-      <li>RSS ve kaynaklardan haber listesi</li>
-      <li>Piyasa şeridi (Yahoo Finance / yfinance — resmi Yahoo ürünü değildir)</li>
-      <li>Özet, çeviri ve brifing (sizin anahtarınız)</li>
-    </ul>
-    <h2>Önemli</h2>
-    <p>Haber metinleri yayıncılara aittir. You News içeriği lisanslamaz veya yeniden satmaz. Ayrıntı: <a href="disclaimer.html">Uyarılar</a>.</p>
-    <p lang="en" class="note">English: You News is a Windows desktop RSS reader. Data stays on your PC. AI uses your own API key. Quotes are unofficial Yahoo data. Article text belongs to publishers.</p>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <p class="kicker" data-i18n="kicker">Küresel manşetler</p>
+        <h1 data-i18n="hero">Dünya haberleri, piyasalar ve AI brifingi tek ekranda.</h1>
+        <p class="lead" data-i18n="lead">You News bu bilgisayarda çalışır. Manşetler ve ayarlar yerelde kalır. Özet ve çeviri için kendi API anahtarınızı veya yerel Ollama’yı kullanırsınız; model erişimi satılmaz.</p>
+        <div class="actions">
+          <a class="btn" id="buy" href="https://younews.lemonsqueezy.com/checkout/buy/77946ed5-6bcf-49ca-a9ef-69dcfd258c35" target="_blank" rel="noopener" data-i18n="buy">Satın al</a>
+          <a class="btn-ghost" href="disclaimer.html" data-i18n="learn">Uyarıları oku</a>
+        </div>
+      </div>
+      <div class="hero-mark">
+        <img src="assets/you_news_wordmark.png" alt="You News — Global headlines">
+      </div>
+    </section>
+    <div class="price-card">
+      <div>
+        <p class="price">$24.99 <span data-i18n="price_note">tek seferlik · Windows</span></p>
+        <p class="note" data-i18n="checkout">Ödeme tek kasadan (Lemon Squeezy) alınır. Microsoft Store ayrı bir vitrin olabilir; bu sitede ikinci ödeme yöntemi yoktur.</p>
+      </div>
+      <a class="btn" href="https://younews.lemonsqueezy.com/checkout/buy/77946ed5-6bcf-49ca-a9ef-69dcfd258c35" target="_blank" rel="noopener" data-i18n="buy">Satın al</a>
+    </div>
+    <div class="grid">
+      <article>
+        <h3 data-i18n="feat1_t">Haber masası</h3>
+        <p data-i18n="feat1">RSS ve kaynaklardan manşet listesi, arama, klasörler ve notlar.</p>
+      </article>
+      <article>
+        <h3 data-i18n="feat2_t">Piyasa şeridi</h3>
+        <p data-i18n="feat2">Yahoo Finance / yfinance üzerinden fiyatlar. Resmi bir Yahoo ürünü değildir; gecikebilir veya kesilebilir.</p>
+      </article>
+      <article>
+        <h3 data-i18n="feat3_t">Sizin anahtarınız</h3>
+        <p data-i18n="feat3">Özet, çeviri ve brifing sizin API anahtarınız veya yerel Ollama ile çalışır.</p>
+      </article>
+    </div>
+    <h2 data-i18n="important_t">Önemli</h2>
+    <p class="note" data-i18n="important">Haber metinleri yayıncılara aittir. You News içeriği lisanslamaz veya yeniden satmaz.</p>
   </main>
   <footer>
-    <span>© You News · younews.media</span>
-    <nav>
-      <a href="disclaimer.html">Uyarılar</a>
-      <a href="privacy.html">Gizlilik</a>
-      <a href="refund.html">İade</a>
-    </nav>
+    <div class="wrap footer-inner">
+      <span data-i18n="copyright">© You News · younews.media</span>
+      <nav>
+        <a href="disclaimer.html" data-i18n="nav_disclaimer">Uyarılar</a>
+        <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
+        <a href="refund.html" data-i18n="nav_refund">İade</a>
+      </nav>
+    </div>
   </footer>
 </body>
 </html>

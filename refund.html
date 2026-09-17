@@ -3,24 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>İade — You News</title>
+  <title data-i18n="title_refund">İade — You News</title>
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
+  <script src="i18n.js" defer></script>
 </head>
 <body>
   <header>
-    <a class="brand" href="index.html">You News</a>
-    <nav>
-      <a href="disclaimer.html">Uyarılar</a>
-      <a href="privacy.html">Gizlilik</a>
-      <a href="refund.html">İade</a>
-    </nav>
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/you_news_icon.png" alt="You News">
+        <span>YOU <em>NEWS</em></span>
+      </a>
+      <nav>
+        <a href="index.html" data-i18n="nav_home">Ana sayfa</a>
+        <a href="disclaimer.html" data-i18n="nav_disclaimer">Uyarılar</a>
+        <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
+        <a class="active" href="refund.html" data-i18n="nav_refund">İade</a>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="tr">TR</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
   </header>
-  <main>
-    <h1>İade ve güncelleme</h1>
-    <p>Bu siteden (Lemon Squeezy) alınan kopyalar için iade ve güncelleme Microsoft’un değil, satıcının sorumluluğundadır.</p>
-    <p>Satın alımdan sonra <b>14 gün</b> içinde, lisansın kötüye kullanılmadığı durumlarda iade talebini <a href="mailto:hello@younews.media">hello@younews.media</a> adresine yazın. Ödeme sağlayıcısı kendi kesintilerini uygulayabilir.</p>
-    <p>Microsoft Store’dan alınan kopyalar Store iade kurallarına tabidir.</p>
-    <p><a href="index.html">← Ana sayfa</a></p>
+  <main class="wrap legal">
+    <p class="kicker">You News</p>
+    <h1 data-i18n="ref_h">İade ve güncelleme</h1>
+    <div class="card">
+      <p data-i18n="ref_1">Bu siteden (Lemon Squeezy) alınan kopyalar için iade ve güncelleme Microsoft’un değil, satıcının sorumluluğundadır.</p>
+      <p data-i18n="ref_2">Satın alımdan sonra 14 gün içinde, lisansın kötüye kullanılmadığı durumlarda iade talebini hello@younews.media adresine yazın. Ödeme sağlayıcısı kendi kesintilerini uygulayabilir.</p>
+      <p data-i18n="ref_3">Microsoft Store’dan alınan kopyalar Store iade kurallarına tabidir.</p>
+    </div>
+    <p><a href="index.html" data-i18n="back">← Ana sayfa</a></p>
   </main>
+  <footer>
+    <div class="wrap footer-inner">
+      <span data-i18n="copyright">© You News · younews.media</span>
+    </div>
+  </footer>
 </body>
 </html>
