@@ -1,2 +1,3 @@
-# younews-site
-younews.media tanıtım ve indirme sitesi
+# younews.media
+
+You News tanıtım ve indirme sitesi. Statik sayfalar; Cloudflare Pages ile yayınlanır.
