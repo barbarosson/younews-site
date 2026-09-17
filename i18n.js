@@ -3,31 +3,37 @@
     tr: {
       title_home: "You News — Windows masaüstü haber okuyucu",
       desc_home: "You News: Windows masaüstü RSS okuyucu. Veri yerelde kalır. AI anahtarı size aittir.",
-      nav_home: "Ana sayfa",
+      nav_home: "Ürün",
       nav_disclaimer: "Uyarılar",
       nav_privacy: "Gizlilik",
       nav_refund: "İade",
-      kicker: "Küresel manşetler",
-      hero: "Dünya haberleri, piyasalar ve AI brifingi tek ekranda.",
-      lead: "You News bu bilgisayarda çalışır. Manşetler ve ayarlar yerelde kalır. Özet ve çeviri için kendi API anahtarınızı veya yerel Ollama’yı kullanırsınız; model erişimi satılmaz.",
-      buy: "Satın al",
-      learn: "Uyarıları oku",
+      kicker: "Windows masaüstü · küresel manşetler",
+      hero: "Haber masası, piyasalar ve brifing — tek pencerede.",
+      lead: "You News bu bilgisayarda çalışır. Manşetler yerelde kalır. Özet ve çeviri sizin API anahtarınız veya yerel Ollama ile; model erişimi satılmaz.",
+      buy: "Satın al · $24.99",
+      learn: "Uyarılar",
+      stat1_k: "Yerel veri",
+      stat1: "Buluta yüklenmez",
+      stat2_k: "Tek seferlik",
+      stat2: "Windows lisansı",
+      stat3_k: "Tek kasa",
+      stat3: "Lemon Squeezy",
       price_note: "tek seferlik · Windows",
-      checkout: "Ödeme tek kasadan (Lemon Squeezy) alınır. Microsoft Store ayrı bir vitrin olabilir; bu sitede ikinci ödeme yöntemi yoktur.",
+      checkout: "Ödeme yalnızca Lemon Squeezy üzerinden alınır. Microsoft Store ayrı bir vitrin olabilir; bu sitede ikinci ödeme yöntemi yoktur.",
       feat1_t: "Haber masası",
-      feat1: "RSS ve kaynaklardan manşet listesi, arama, klasörler ve notlar.",
+      feat1: "RSS, arama, klasörler ve notlar. Yayıncı metni yayıncıya aittir.",
       feat2_t: "Piyasa şeridi",
-      feat2: "Yahoo Finance / yfinance üzerinden fiyatlar. Resmi bir Yahoo ürünü değildir; gecikebilir veya kesilebilir.",
+      feat2: "Yahoo Finance / yfinance. Resmi Yahoo ürünü değildir; gecikebilir veya kesilebilir.",
       feat3_t: "Sizin anahtarınız",
-      feat3: "Özet, çeviri ve brifing sizin API anahtarınız veya yerel Ollama ile çalışır.",
-      important_t: "Önemli",
+      feat3: "Özet, çeviri ve brifing sizin anahtarınız veya Ollama ile çalışır.",
+      important_t: "Yasal not",
       important: "Haber metinleri yayıncılara aittir. You News içeriği lisanslamaz veya yeniden satmaz.",
       title_disclaimer: "Uyarılar — You News",
       disc_h: "Uyarılar",
       disc_1: "Yahoo, yfinance, Microsoft veya herhangi bir yayıncıyla bağlantılı değildir. Piyasa fiyatları yfinance üzerinden resmi olmayan Yahoo Finance erişiminden gelir; gecikebilir, eksik kalabilir veya habersiz kesilebilir. Bu resmi bir Yahoo ürünü değildir.",
       disc_2: "RSS ve haber metinleri yayıncılara aittir. You News yalnızca sizin eklediğiniz veya açtığınız kaynakları çeker; bu içeriği lisanslamaz veya yeniden satmaz.",
       disc_3: "You News’i Microsoft Store dışında aldıysanız güncelleme ve iade, Microsoft’un değil o kopyayı satanın (bu site / Lemon Squeezy) sorumluluğundadır.",
-      back: "← Ana sayfa",
+      back: "← Ürün",
       title_privacy: "Gizlilik — You News",
       priv_h: "Gizlilik",
       priv_1: "You News bir Windows masaüstü uygulamasıdır. Haberler, kaynaklar, ayarlar ve notlar varsayılan olarak sizin bilgisayarınızda tutulur; bunları bir You News bulut hesabına yüklemeyiz.",
@@ -45,31 +51,37 @@
     en: {
       title_home: "You News — Windows desktop news reader",
       desc_home: "You News is a Windows desktop RSS reader. Data stays on your PC. AI uses your own API key.",
-      nav_home: "Home",
+      nav_home: "Product",
       nav_disclaimer: "Disclaimer",
       nav_privacy: "Privacy",
       nav_refund: "Refunds",
-      kicker: "Global headlines",
-      hero: "World news, markets, and an AI briefing on one screen.",
-      lead: "You News runs on this computer. Headlines and settings stay local. Summaries and translation use your own API key or local Ollama; model access is not sold.",
-      buy: "Buy",
-      learn: "Read the disclaimer",
+      kicker: "Windows desktop · global headlines",
+      hero: "A news desk, markets, and briefing — in one window.",
+      lead: "You News runs on this computer. Headlines stay local. Summaries and translation use your API key or local Ollama; model access is not sold.",
+      buy: "Buy · $24.99",
+      learn: "Disclaimer",
+      stat1_k: "Local data",
+      stat1: "Not uploaded to a cloud",
+      stat2_k: "One-time",
+      stat2: "Windows license",
+      stat3_k: "Single checkout",
+      stat3: "Lemon Squeezy",
       price_note: "one-time · Windows",
-      checkout: "Checkout is a single cart (Lemon Squeezy). Microsoft Store may be a separate storefront; this site has no second payment method.",
+      checkout: "Payment is taken only through Lemon Squeezy. Microsoft Store may be a separate storefront; this site has no second payment method.",
       feat1_t: "News desk",
-      feat1: "Headlines from RSS and sources, plus search, folders, and notes.",
+      feat1: "RSS, search, folders, and notes. Publisher text belongs to publishers.",
       feat2_t: "Market tape",
-      feat2: "Quotes via Yahoo Finance / yfinance. Not an official Yahoo product; data may lag or stop without notice.",
+      feat2: "Yahoo Finance / yfinance. Not an official Yahoo product; data may lag or stop.",
       feat3_t: "Your key",
-      feat3: "Summaries, translation, and briefing use your API key or local Ollama.",
-      important_t: "Important",
+      feat3: "Summaries, translation, and briefing use your key or Ollama.",
+      important_t: "Legal note",
       important: "Article text belongs to publishers. You News does not license or resell that content.",
       title_disclaimer: "Disclaimer — You News",
       disc_h: "Disclaimer",
       disc_1: "Not affiliated with Yahoo, yfinance, Microsoft, or any publisher. Market prices come from unofficial Yahoo Finance access via yfinance; they may be delayed, incomplete, or interrupted without notice. This is not an official Yahoo product.",
       disc_2: "RSS and article text belong to publishers. You News only fetches sources you add or open; it does not license or resell that content.",
       disc_3: "If you bought You News outside the Microsoft Store, updates and refunds are the seller’s responsibility (this site / Lemon Squeezy), not Microsoft’s.",
-      back: "← Home",
+      back: "← Product",
       title_privacy: "Privacy — You News",
       priv_h: "Privacy",
       priv_1: "You News is a Windows desktop app. Headlines, sources, settings, and notes stay on your computer by default; we do not upload them to a You News cloud account.",
@@ -93,8 +105,7 @@
       const saved = localStorage.getItem("younews-lang");
       if (saved === "tr" || saved === "en") return saved;
     } catch (_) {}
-    const nav = (navigator.language || "en").toLowerCase();
-    return nav.startsWith("tr") ? "tr" : "en";
+    return (navigator.language || "en").toLowerCase().startsWith("tr") ? "tr" : "en";
   }
 
   function apply(lang) {
@@ -106,9 +117,7 @@
     });
     document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
       const spec = el.getAttribute("data-i18n-attr").split(":");
-      const attr = spec[0];
-      const key = spec[1];
-      if (pack[key]) el.setAttribute(attr, pack[key]);
+      if (pack[spec[1]]) el.setAttribute(spec[0], pack[spec[1]]);
     });
     document.querySelectorAll(".lang button").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
@@ -118,8 +127,6 @@
     url.searchParams.set("lang", lang);
     history.replaceState(null, "", url);
   }
-
-  window.YouNewsI18n = { apply: apply, detect: detect };
 
   document.addEventListener("DOMContentLoaded", function () {
     apply(detect());

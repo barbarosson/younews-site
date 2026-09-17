@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="title_home">You News — Windows masaüstü haber okuyucu</title>
   <meta name="description" data-i18n-attr="content:desc_home" content="You News: Windows masaüstü RSS okuyucu. Veri yerelde kalır. AI anahtarı size aittir.">
-  <link rel="icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="assets/you_news_icon.png">
-  <link rel="stylesheet" href="styles.css">
-  <script src="i18n.js" defer></script>
+  <link rel="icon" href="assets/you_news_mark.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/you_news_mark.png">
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="i18n.js?v=2" defer></script>
 </head>
 <body>
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="index.html">
-        <img src="assets/you_news_icon.png" alt="You News">
+        <img src="assets/you_news_mark.png" alt="" width="32" height="32">
         <span>YOU <em>NEWS</em></span>
       </a>
       <nav>
-        <a class="active" href="index.html" data-i18n="nav_home">Ana sayfa</a>
+        <a class="active" href="index.html" data-i18n="nav_home">Ürün</a>
         <a href="disclaimer.html" data-i18n="nav_disclaimer">Uyarılar</a>
         <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
         <a href="refund.html" data-i18n="nav_refund">İade</a>
         <div class="lang" role="group" aria-label="Language">
-          <button type="button" data-lang="tr" aria-pressed="true">TR</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="tr">TR</button>
+          <button type="button" data-lang="en">EN</button>
         </div>
       </nav>
     </div>
@@ -32,40 +32,59 @@
   <main class="wrap">
     <section class="hero">
       <div>
-        <p class="kicker" data-i18n="kicker">Küresel manşetler</p>
-        <h1 data-i18n="hero">Dünya haberleri, piyasalar ve AI brifingi tek ekranda.</h1>
-        <p class="lead" data-i18n="lead">You News bu bilgisayarda çalışır. Manşetler ve ayarlar yerelde kalır. Özet ve çeviri için kendi API anahtarınızı veya yerel Ollama’yı kullanırsınız; model erişimi satılmaz.</p>
+        <p class="kicker" data-i18n="kicker">Windows masaüstü · küresel manşetler</p>
+        <h1 data-i18n="hero">Haber masası, piyasalar ve brifing — tek pencerede.</h1>
+        <p class="lead" data-i18n="lead">You News bu bilgisayarda çalışır. Manşetler yerelde kalır. Özet ve çeviri sizin API anahtarınız veya yerel Ollama ile; model erişimi satılmaz.</p>
         <div class="actions">
-          <a class="btn" id="buy" href="https://younews.lemonsqueezy.com/checkout/buy/77946ed5-6bcf-49ca-a9ef-69dcfd258c35" target="_blank" rel="noopener" data-i18n="buy">Satın al</a>
-          <a class="btn-ghost" href="disclaimer.html" data-i18n="learn">Uyarıları oku</a>
+          <a class="btn" id="buy" href="https://younews.lemonsqueezy.com/checkout/buy/77946ed5-6bcf-49ca-a9ef-69dcfd258c35" target="_blank" rel="noopener" data-i18n="buy">Satın al · $24.99</a>
+          <a class="btn-ghost" href="disclaimer.html" data-i18n="learn">Uyarılar</a>
+        </div>
+        <div class="stats">
+          <div><b data-i18n="stat1_k">Yerel veri</b><span data-i18n="stat1">Buluta yüklenmez</span></div>
+          <div><b data-i18n="stat2_k">Tek seferlik</b><span data-i18n="stat2">Windows lisansı</span></div>
+          <div><b data-i18n="stat3_k">Tek kasa</b><span data-i18n="stat3">Lemon Squeezy</span></div>
         </div>
       </div>
-      <div class="hero-mark">
-        <img src="assets/you_news_wordmark.png" alt="You News — Global headlines">
-      </div>
+      <aside class="desk" aria-hidden="true">
+        <div class="desk-top">
+          <img src="assets/you_news_mark.png" alt="" width="22" height="22">
+          You News
+        </div>
+        <div class="desk-body">
+          <div class="desk-side"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="desk-list">
+            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
+            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
+            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
+            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
+            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
+          </div>
+        </div>
+        <div class="tape"><b>XU100</b> +0.4 · <b>GOLD</b> · <b>DXY</b> · <b>BTC</b></div>
+      </aside>
     </section>
-    <div class="price-card">
-      <div>
-        <p class="price">$24.99 <span data-i18n="price_note">tek seferlik · Windows</span></p>
-        <p class="note" data-i18n="checkout">Ödeme tek kasadan (Lemon Squeezy) alınır. Microsoft Store ayrı bir vitrin olabilir; bu sitede ikinci ödeme yöntemi yoktur.</p>
-      </div>
-      <a class="btn" href="https://younews.lemonsqueezy.com/checkout/buy/77946ed5-6bcf-49ca-a9ef-69dcfd258c35" target="_blank" rel="noopener" data-i18n="buy">Satın al</a>
-    </div>
     <div class="grid">
       <article>
         <h3 data-i18n="feat1_t">Haber masası</h3>
-        <p data-i18n="feat1">RSS ve kaynaklardan manşet listesi, arama, klasörler ve notlar.</p>
+        <p data-i18n="feat1">RSS, arama, klasörler ve notlar. Yayıncı metni yayıncıya aittir.</p>
       </article>
       <article>
         <h3 data-i18n="feat2_t">Piyasa şeridi</h3>
-        <p data-i18n="feat2">Yahoo Finance / yfinance üzerinden fiyatlar. Resmi bir Yahoo ürünü değildir; gecikebilir veya kesilebilir.</p>
+        <p data-i18n="feat2">Yahoo Finance / yfinance. Resmi Yahoo ürünü değildir; gecikebilir veya kesilebilir.</p>
       </article>
       <article>
         <h3 data-i18n="feat3_t">Sizin anahtarınız</h3>
-        <p data-i18n="feat3">Özet, çeviri ve brifing sizin API anahtarınız veya yerel Ollama ile çalışır.</p>
+        <p data-i18n="feat3">Özet, çeviri ve brifing sizin anahtarınız veya Ollama ile çalışır.</p>
       </article>
     </div>
-    <h2 data-i18n="important_t">Önemli</h2>
+    <div class="price-card">
+      <div>
+        <p class="price">$24.99 <span data-i18n="price_note">tek seferlik · Windows</span></p>
+        <p class="note" data-i18n="checkout">Ödeme yalnızca Lemon Squeezy üzerinden alınır. Microsoft Store ayrı bir vitrin olabilir; bu sitede ikinci ödeme yöntemi yoktur.</p>
+      </div>
+      <a class="btn" href="https://younews.lemonsqueezy.com/checkout/buy/77946ed5-6bcf-49ca-a9ef-69dcfd258c35" target="_blank" rel="noopener" data-i18n="buy">Satın al · $24.99</a>
+    </div>
+    <h2 data-i18n="important_t">Yasal not</h2>
     <p class="note" data-i18n="important">Haber metinleri yayıncılara aittir. You News içeriği lisanslamaz veya yeniden satmaz.</p>
   </main>
   <footer>
