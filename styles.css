@@ -454,6 +454,13 @@ main { padding-bottom: 80px; }
   margin-bottom: 16px;
 }
 
+.thanks {
+  text-align: left;
+}
+.thanks h2 { margin: 0 0 10px; }
+.thanks .btn { margin-top: 8px; }
+.form-err { color: #f08888; }
+
 footer {
   border-top: 1px solid var(--line);
   padding: 22px 0 40px;
