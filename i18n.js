@@ -9,6 +9,7 @@
       nav_disclaimer: "Uyarılar",
       nav_privacy: "Gizlilik",
       nav_refund: "İade",
+      nav_contact: "İletişim",
       kicker: "Windows masaüstü uygulaması",
       hero: "Haber, piyasa ve kısa brifing — hepsi sizin pencerenizde.",
       lead: "You News bir web sitesi değil; bu bilgisayarda durur. Kaynaklarınız, notlarınız ve ayarlarınız evde kalır. Özet veya çeviri isterseniz kendi API anahtarınızı (ya da bilgisayardaki Ollama’yı) bağlarsınız. Size model satmıyoruz.",
@@ -70,7 +71,21 @@
       priv_2: "Özet ve çeviri, sizin yazdığınız anahtarla o şirketin sunucusuna gider — ya da Ollama’da evde kalır. Anahtarı işletim sisteminin parola yerine koyarız. Size ‘sınırsız yapay zekâ’ satmıyoruz.",
       priv_3: "Piyasa verisi üçüncü taraftan gelir (Yahoo Finance / yfinance). RSS, sizin seçtiğiniz yayıncıya gider.",
       priv_4: "Bu site vitrindir. Canlı satışta ödemeyi Paddle.com işler; kart numarası burada durmaz. Paddle’ın gizlilik metni ödeme için geçerlidir.",
+      priv_5: "İletişim formu FormSubmit üzerinden hello@younews.media adresine gider. Ad, e-posta ve mesaj yalnızca yanıt için kullanılır.",
       contact: "Yazın:",
+      title_contact: "İletişim — You News",
+      contact_h: "Bize yazın",
+      contact_lead: "Satış, iade ve teknik konular için e-posta en kolayı. Form da aynı kutuya düşer.",
+      contact_email: "E-posta",
+      contact_phone: "Telefon",
+      contact_address: "Adres",
+      contact_hours: "Hafta içi, Türkiye saati. Önce e-posta yazın; telefona her zaman bakılamayabilir.",
+      form_name: "Adınız",
+      form_email: "E-posta",
+      form_msg: "Mesaj",
+      form_send: "Gönder",
+      form_note: "Gönderince mail hello@younews.media kutusuna gelir. İlk seferde FormSubmit bir onay linki yollayabilir; onu açın.",
+      form_ok: "Mesaj gitti. hello@ kutusundan yanıtlarız.",
       title_refund: "İade — You News",
       ref_h: "İade ve güncelleme",
       ref_1: "Bu siteden alınan kopyada sipariş süreci Paddle.com üzerinden yürür. Paddle.com tüm bu siparişlerde Merchant of Record’dur; müşteri hizmeti ve iadeyi Paddle yürütür.",
@@ -87,6 +102,7 @@
       nav_disclaimer: "Disclaimer",
       nav_privacy: "Privacy",
       nav_refund: "Refunds",
+      nav_contact: "Contact",
       kicker: "A Windows desktop app",
       hero: "Headlines, markets, and a short briefing — on your machine.",
       lead: "You News isn’t a site you sign into. It lives on this computer. Your sources, notes, and settings stay here. Want a summary or a translation? Plug in your own API key, or run Ollama at home. We don’t sell you a model.",
@@ -148,7 +164,21 @@
       priv_2: "Summaries and translation go to the company behind the key you typed — or stay home with Ollama. The key sits in the OS credential store. We are not selling you ‘unlimited AI’.",
       priv_3: "Market data comes from a third party (Yahoo Finance / yfinance). RSS goes to the publishers you pick.",
       priv_4: "This website is the brochure. When sales are live, Paddle.com takes payment; card numbers don’t live here. Paddle’s privacy policy covers checkout.",
+      priv_5: "The contact form is delivered to hello@younews.media via FormSubmit. We use your name, email, and message only to reply.",
       contact: "Write to us:",
+      title_contact: "Contact — You News",
+      contact_h: "Get in touch",
+      contact_lead: "Email is the best way for sales, refunds, and the app. The form lands in the same inbox.",
+      contact_email: "Email",
+      contact_phone: "Phone",
+      contact_address: "Address",
+      contact_hours: "Weekdays, Turkey time. Email first — we may not always pick up the phone.",
+      form_name: "Your name",
+      form_email: "Email",
+      form_msg: "Message",
+      form_send: "Send",
+      form_note: "The note goes to hello@younews.media. FormSubmit may send a one-time confirmation link; open it.",
+      form_ok: "Sent. We’ll reply from the hello@ inbox.",
       title_refund: "Refunds — You News",
       ref_h: "Refunds and updates",
       ref_1: "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns.",
@@ -185,6 +215,9 @@
     try { localStorage.setItem("younews-lang", lang); } catch (_) {}
     const url = new URL(location.href);
     url.searchParams.set("lang", lang);
+    if (document.getElementById("sent") && url.searchParams.get("sent") === "1") {
+      document.getElementById("sent").hidden = false;
+    }
     history.replaceState(null, "", url);
   }
 

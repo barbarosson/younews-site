@@ -170,6 +170,7 @@ h1 {
 }
 
 .btn { background: var(--accent); color: #fff !important; }
+button.btn { border: 0; cursor: pointer; font: inherit; }
 .btn:hover { background: var(--accent-hover); color: #fff !important; }
 
 .btn-ghost {
@@ -403,6 +404,56 @@ main { padding-bottom: 80px; }
 .legal .card { padding: 24px; }
 .legal p { color: var(--muted); }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 20px;
+  align-items: start;
+  max-width: 960px;
+}
+.contact-grid .card { padding: 22px 24px; }
+.contact-list { list-style: none; margin: 0; padding: 0; }
+.contact-list li { margin: 0 0 16px; }
+.contact-list span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.contact-list a, .contact-list address {
+  color: var(--text);
+  font-style: normal;
+}
+.form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.form input, .form textarea {
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+.form textarea { min-height: 140px; resize: vertical; }
+.form .hp { position: absolute; left: -9999px; }
+.ok {
+  background: rgba(63, 185, 80, 0.12);
+  border: 1px solid #3fb950;
+  color: #c8f0d0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
 footer {
   border-top: 1px solid var(--line);
   padding: 22px 0 40px;
@@ -418,7 +469,7 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .hero, .desk-body, .grid, .steps { grid-template-columns: 1fr; }
+  .hero, .desk-body, .grid, .steps, .contact-grid { grid-template-columns: 1fr; }
   .desk { margin: 0 auto; }
   .desk-side { display: none; }
   .price-card { flex-direction: column; align-items: flex-start; }
