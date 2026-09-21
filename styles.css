@@ -443,7 +443,11 @@ main { padding-bottom: 80px; }
   color: var(--text);
   font: inherit;
 }
-.form textarea { min-height: 140px; resize: vertical; }
+.form input:invalid:not(:placeholder-shown),
+.form textarea:invalid:not(:placeholder-shown) {
+  border-color: #f08888;
+}
+.form input, .form textarea { font: inherit; }
 .form .hp { position: absolute; left: -9999px; }
 .ok {
   background: rgba(63, 185, 80, 0.12);
