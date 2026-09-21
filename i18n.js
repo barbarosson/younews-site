@@ -85,7 +85,7 @@
       form_msg: "Mesaj",
       form_send: "Gönder",
       form_sending: "Gönderiliyor…",
-      form_note: "Mesaj hello@younews.media kutusuna düşer. Bu sayfada kalırsınız; gri FormSubmit ekranı çıkmaz.",
+      form_note: "Mesaj hello@younews.media kutusuna düşer.",
       form_ok_h: "Mesajınız alındı",
       form_ok: "hello@ kutusundan yanıtlarız. Satın alma Paddle onayından sonra açılacak.",
       form_err: "Gönderilemedi. hello@younews.media adresine doğrudan yazın.",
@@ -181,7 +181,7 @@
       form_msg: "Message",
       form_send: "Send",
       form_sending: "Sending…",
-      form_note: "The note goes to hello@younews.media. You stay on this page — no FormSubmit thank-you screen.",
+      form_note: "The note goes to hello@younews.media.",
       form_ok_h: "Message received",
       form_ok: "We’ll reply from the hello@ inbox. Checkout opens after Paddle approval.",
       form_err: "Could not send. Email hello@younews.media directly.",
@@ -221,9 +221,8 @@
     try { localStorage.setItem("younews-lang", lang); } catch (_) {}
     const url = new URL(location.href);
     url.searchParams.set("lang", lang);
-    if (document.getElementById("sent") && url.searchParams.get("sent") === "1") {
-      document.getElementById("sent").hidden = false;
-    }
+    var thanks = document.getElementById("thanks");
+    if (thanks && url.searchParams.get("sent") === "1") thanks.hidden = false;
     history.replaceState(null, "", url);
   }
 

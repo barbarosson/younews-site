@@ -443,11 +443,10 @@ main { padding-bottom: 80px; }
   color: var(--text);
   font: inherit;
 }
-.form input:invalid:not(:placeholder-shown),
-.form textarea:invalid:not(:placeholder-shown) {
+.form.tried input:invalid,
+.form.tried textarea:invalid {
   border-color: #f08888;
 }
-.form .hp { position: absolute; left: -9999px; }
 .ok {
   background: rgba(63, 185, 80, 0.12);
   border: 1px solid #3fb950;
