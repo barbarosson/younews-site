@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="title_contact">İletişim — You News</title>
   <link rel="icon" href="assets/you_news_mark.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=8">
-  <script src="i18n.js?v=8" defer></script>
-  <script src="contact.js?v=8" defer></script>
+  <link rel="stylesheet" href="styles.css?v=9">
+  <script src="i18n.js?v=9" defer></script>
+  <script src="contact.js?v=9" defer></script>
 </head>
 <body>
   <header>
@@ -56,9 +56,9 @@
         <p class="note" data-i18n="contact_hours">Hafta içi, Türkiye saati. Önce e-posta yazın; telefona her zaman bakılamayabilir.</p>
       </div>
       <div class="card" id="form-card">
-        <form class="form" id="contact-form" action="https://formsubmit.co/hello@younews.media" method="POST">
+        <iframe class="fs-frame" name="younews-fs" id="younews-fs" title=" " tabindex="-1" aria-hidden="true"></iframe>
+        <form class="form" id="contact-form" action="https://formsubmit.co/hello@younews.media" method="POST" target="younews-fs">
           <input type="hidden" name="_subject" value="You News contact">
-          <input type="hidden" name="_next" value="https://younews.media/contact.html?sent=1">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <label for="contact-name" data-i18n="form_name">Adınız</label>

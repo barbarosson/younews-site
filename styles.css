@@ -447,6 +447,14 @@ main { padding-bottom: 80px; }
 .form.tried textarea:invalid {
   border-color: #f08888;
 }
+.fs-frame {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
 .ok {
   background: rgba(63, 185, 80, 0.12);
   border: 1px solid #3fb950;
