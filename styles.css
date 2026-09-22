@@ -247,42 +247,60 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
 .desk-body { display: grid; grid-template-columns: 118px 1fr; min-height: 230px; }
 
 .desk-side {
-  padding: 14px 12px;
+  padding: 12px 10px;
   border-right: 1px solid var(--line);
   background: #0b1118;
 }
 
 .desk-side span {
   display: block;
-  height: 8px;
-  border-radius: 99px;
+  padding: 7px 8px;
+  margin-bottom: 4px;
+  border-radius: 7px;
   background: #243140;
-  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
 }
 
-.desk-side span:first-child { width: 70%; background: var(--gold); }
-.desk-side span:nth-child(2) { width: 88%; }
-.desk-side span:nth-child(3) { width: 54%; }
+.desk-side span.on {
+  width: auto;
+  background: rgba(227, 179, 65, 0.16);
+  color: var(--gold);
+}
 
-.desk-list { padding: 12px; }
+.desk-list { padding: 6px 8px 8px; overflow: hidden; }
 
-.row {
+.desk-feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.desk-feed li {
   display: grid;
-  grid-template-columns: 8px 1fr 52px;
-  gap: 10px;
-  align-items: center;
-  padding: 10px 8px;
+  grid-template-columns: 8px 1fr auto;
+  gap: 8px;
+  align-items: start;
+  padding: 8px 6px;
   border-bottom: 1px solid #18222d;
 }
 
-.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
-.bar { height: 7px; border-radius: 99px; background: #2a3644; }
-.meta { height: 7px; border-radius: 99px; background: #1f2b38; }
+.desk-h {
+  color: var(--text);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.desk-m {
+  color: var(--muted);
+  font-size: 0.62rem;
+  white-space: nowrap;
+}
 
 .tape {
-  display: flex;
-  gap: 18px;
-  padding: 9px 14px;
+  display: block;
+  padding: 0;
   border-top: 1px solid var(--line);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -292,7 +310,36 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
   overflow: hidden;
 }
 
+.tape-track {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: tape-move 22s linear infinite;
+}
+
+.tape-track span {
+  padding: 9px 14px;
+}
+
 .tape b { color: var(--gold); font-weight: 600; }
+
+@keyframes tape-move {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.desk-caption {
+  margin: 12px 0 0;
+  max-width: 460px;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tape-track { animation: none; }
+}
 
 .grid {
   display: grid;

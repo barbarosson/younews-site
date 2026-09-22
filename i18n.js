@@ -59,6 +59,7 @@
       checkout: "Siparişi Paddle.com alır (Merchant of Record). Bu sitede ikinci ödeme butonu yok. Kasa onaylanınca Satın al açılır.",
       important_t: "Dürüst olalım",
       important: "Manşetler başkalarının işi. You News bir okuyucu; ajans veya lisansçı değil.",
+      proto_cap: "Örnek vitrin. Canlı haber değil; Windows’taki You News böyle durur.",
       title_disclaimer: "Uyarılar — You News",
       disc_h: "Açık konuşalım",
       disc_1: "Yahoo, yfinance, Microsoft veya herhangi bir gazeteyle bağımız yok. Piyasa rakamları yfinance üzerinden, resmi olmayan Yahoo Finance erişiminden gelir. Gecikebilir, eksik kalabilir, haber vermeden kesilebilir. Bu resmi bir Yahoo ürünü değil. Yatırım tavsiyesi de değil.",
@@ -155,6 +156,7 @@
       checkout: "Orders are processed by our reseller Paddle.com (Merchant of Record). There is no second pay button. Buy unlocks when checkout is approved.",
       important_t: "One more thing",
       important: "The stories are other people’s work. You News is a reader, not a wire service.",
+      proto_cap: "Sample window. Not live news — this is how You News sits on Windows.",
       title_disclaimer: "Disclaimer — You News",
       disc_h: "In plain words",
       disc_1: "We are not Yahoo, yfinance, Microsoft, or any newsroom. Market numbers come through yfinance, from unofficial Yahoo Finance access. They can be late, thin, or gone without warning. This is not an official Yahoo product. It is not investment advice.",
@@ -224,6 +226,7 @@
     var thanks = document.getElementById("thanks");
     if (thanks && url.searchParams.get("sent") === "1") thanks.hidden = false;
     history.replaceState(null, "", url);
+    document.dispatchEvent(new CustomEvent("younews-lang", { detail: lang }));
   }
 
   document.addEventListener("DOMContentLoaded", function () {

@@ -7,8 +7,9 @@
   <meta name="description" data-i18n-attr="content:desc_home" content="You News, bu bilgisayarda çalışan bir haber okuyucu. Listeniz sizde kalır. Yapay zekâ için kendi anahtarınızı kullanırsınız.">
   <link rel="icon" href="assets/you_news_mark.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/you_news_mark.png">
-  <link rel="stylesheet" href="styles.css?v=10">
-  <script src="i18n.js?v=5" defer></script>
+  <link rel="stylesheet" href="styles.css?v=11">
+  <script src="i18n.js?v=10" defer></script>
+  <script src="proto.js?v=1" defer></script>
 </head>
 <body>
   <header>
@@ -58,17 +59,19 @@
           You News
         </div>
         <div class="desk-body">
-          <div class="desk-side"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="desk-side" id="desk-side"></div>
           <div class="desk-list">
-            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
-            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
-            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
-            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
-            <div class="row"><i class="dot"></i><i class="bar"></i><i class="meta"></i></div>
+            <ul class="desk-feed" id="desk-feed"></ul>
           </div>
         </div>
-        <div class="tape"><b>XU100</b> +0.4 · <b>GOLD</b> · <b>DXY</b> · <b>BTC</b></div>
+        <div class="tape">
+          <div class="tape-track">
+            <span>örnek şerit · <b>XU100</b> · <b>GOLD</b> · <b>DXY</b> · <b>BTC</b> · <b>BRENT</b> ·</span>
+            <span>örnek şerit · <b>XU100</b> · <b>GOLD</b> · <b>DXY</b> · <b>BTC</b> · <b>BRENT</b> ·</span>
+          </div>
+        </div>
       </aside>
+      <p class="desk-caption" data-i18n="proto_cap">Örnek vitrin. Canlı haber değil; Windows’taki You News böyle durur.</p>
       </div>
     </section>
     <div class="grid">
