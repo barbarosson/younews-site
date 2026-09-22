@@ -10,6 +10,7 @@
       nav_privacy: "Gizlilik",
       nav_refund: "İade",
       nav_contact: "İletişim",
+      nav_menu: "Menü",
       kicker: "Windows masaüstü uygulaması",
       hero: "Haber, piyasa ve kısa brifing — hepsi sizin pencerenizde.",
       lead: "You News bir web sitesi değil; bu bilgisayarda durur. Kaynaklarınız, notlarınız ve ayarlarınız evde kalır. Özet veya çeviri isterseniz kendi API anahtarınızı (ya da bilgisayardaki Ollama’yı) bağlarsınız. Size model satmıyoruz.",
@@ -107,6 +108,7 @@
       nav_privacy: "Privacy",
       nav_refund: "Refunds",
       nav_contact: "Contact",
+      nav_menu: "Menu",
       kicker: "A Windows desktop app",
       hero: "Headlines, markets, and a short briefing — on your machine.",
       lead: "You News isn’t a site you sign into. It lives on this computer. Your sources, notes, and settings stay here. Want a summary or a translation? Plug in your own API key, or run Ollama at home. We don’t sell you a model.",
@@ -233,6 +235,12 @@
     apply(detect());
     document.querySelectorAll(".lang button").forEach(function (btn) {
       btn.addEventListener("click", function () { apply(btn.dataset.lang); });
+    });
+    var toggle = document.getElementById("nav-toggle");
+    document.querySelectorAll("header nav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (toggle) toggle.checked = false;
+      });
     });
   });
 })();

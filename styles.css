@@ -51,7 +51,7 @@ header {
   top: 0;
   z-index: 40;
   border-bottom: 1px solid var(--line);
-  background: rgba(7, 11, 17, 0.78);
+  background: rgba(7, 11, 17, 0.92);
   backdrop-filter: blur(18px);
 }
 
@@ -562,11 +562,83 @@ footer {
   flex-wrap: wrap;
 }
 
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.2vw, 24px);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.nav-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-elev);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
 @media (max-width: 900px) {
   .hero, .desk-body, .grid, .steps, .contact-grid { grid-template-columns: 1fr; }
   .desk { margin: 0 auto; }
   .desk-side { display: none; }
-  .hero-mascot { width: 104px; right: 0; bottom: -16px; }
+  .hero-mascot { display: none; }
   .price-card { flex-direction: column; align-items: flex-start; }
-  .header-inner { padding: 10px 0; }
+  .header-inner {
+    position: relative;
+    flex-wrap: nowrap;
+    min-height: 56px;
+    padding: 6px 0;
+    gap: 12px;
+  }
+  .brand img:not(.mascot) { display: none; }
+  .brand { min-width: 0; }
+  .brand span { white-space: nowrap; }
+  .nav-btn { display: inline-flex; }
+  .header-tools { gap: 8px; }
+  nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: calc(-1 * var(--gutter));
+    width: calc(100% + (var(--gutter) * 2));
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px var(--gutter) 12px;
+    background: rgba(7, 11, 17, 0.97);
+    border-bottom: 1px solid var(--line);
+    flex-wrap: nowrap;
+  }
+  .header-inner:has(.nav-toggle:checked) nav { display: flex; }
+  nav a {
+    padding: 14px 4px;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  nav a:last-of-type { border-bottom: 0; }
+  body:has(.nav-toggle:checked) { overflow: hidden; }
 }
