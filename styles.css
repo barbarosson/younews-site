@@ -13,7 +13,8 @@
   --line: #1e2a38;
   --ok: #3fb950;
   --radius: 16px;
-  --max: 1120px;
+  --max: 1760px;
+  --gutter: clamp(16px, 2.2vw, 40px);
 }
 
 * { box-sizing: border-box; }
@@ -41,7 +42,7 @@ a { color: var(--gold); text-decoration: none; }
 a:hover { color: var(--gold-2); }
 
 .wrap {
-  width: min(var(--max), calc(100% - 40px));
+  width: min(var(--max), calc(100% - (var(--gutter) * 2)));
   margin-inline: auto;
 }
 
@@ -58,8 +59,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  min-height: 64px;
+  gap: clamp(16px, 2vw, 32px);
+  min-height: 72px;
 }
 
 .brand {
@@ -69,7 +70,7 @@ header {
   color: var(--text) !important;
   font-weight: 700;
   letter-spacing: 0.08em;
-  font-size: 0.82rem;
+  font-size: clamp(0.82rem, 0.35vw + 0.72rem, 0.98rem);
 }
 
 .brand img,
@@ -114,13 +115,13 @@ header {
 nav {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: clamp(14px, 1.3vw, 28px);
   flex-wrap: wrap;
 }
 
 nav a {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 0.35vw + 0.78rem, 1.05rem);
   font-weight: 500;
 }
 
@@ -154,9 +155,9 @@ nav a:hover, nav a.active { color: var(--text); }
 .hero {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 48px;
+  gap: clamp(32px, 4vw, 64px);
   align-items: center;
-  padding: 72px 0 40px;
+  padding: clamp(48px, 6vw, 88px) 0 40px;
 }
 
 .kicker {
@@ -171,7 +172,7 @@ nav a:hover, nav a.active { color: var(--text); }
 h1 {
   margin: 0 0 16px;
   font-family: Newsreader, Georgia, serif;
-  font-size: clamp(2.1rem, 4.4vw, 3.5rem);
+  font-size: clamp(2.1rem, 3.2vw + 0.6rem, 4.1rem);
   font-weight: 620;
   line-height: 1.12;
   letter-spacing: -0.03em;
@@ -179,9 +180,9 @@ h1 {
 
 .lead {
   margin: 0 0 28px;
-  max-width: 38rem;
+  max-width: min(48rem, 100%);
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 0.35vw + 0.92rem, 1.22rem);
   line-height: 1.65;
 }
 
@@ -195,7 +196,7 @@ h1 {
   padding: 0 18px;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 0.2vw + 0.88rem, 1.05rem);
 }
 
 .btn { background: var(--accent); color: #fff !important; }
@@ -226,7 +227,8 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
   background: linear-gradient(180deg, #121a25, #0c121a);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
   overflow: hidden;
-  max-width: 460px;
+  max-width: min(100%, clamp(460px, 34vw, 620px));
+  width: 100%;
   margin-left: auto;
 }
 
@@ -330,10 +332,10 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
 
 .desk-caption {
   margin: 12px 0 0;
-  max-width: 460px;
+  max-width: min(100%, clamp(460px, 34vw, 620px));
   margin-left: auto;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: clamp(0.78rem, 0.2vw + 0.72rem, 0.9rem);
   line-height: 1.45;
 }
 
@@ -387,7 +389,7 @@ h2 {
 }
 
 .section-head {
-  max-width: 36rem;
+  max-width: min(52rem, 100%);
   margin-bottom: 22px;
 }
 
@@ -471,12 +473,12 @@ h2 {
 .faq details p {
   margin: 0 0 16px;
   color: var(--muted);
-  max-width: 46rem;
+  max-width: min(56rem, 100%);
 }
 
 main { padding-bottom: 80px; }
 
-.legal { max-width: 720px; padding-top: 48px; }
+.legal { max-width: none; padding-top: 48px; }
 .legal .card { padding: 24px; }
 .legal p { color: var(--muted); }
 
@@ -485,7 +487,6 @@ main { padding-bottom: 80px; }
   grid-template-columns: 0.9fr 1.1fr;
   gap: 20px;
   align-items: start;
-  max-width: 960px;
 }
 .contact-grid .card { padding: 22px 24px; }
 .contact-list { list-style: none; margin: 0; padding: 0; }
