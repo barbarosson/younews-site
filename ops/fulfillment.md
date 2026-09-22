@@ -5,6 +5,8 @@ One checkout only: Paddle on younews.media. No second pay button.
 
 ## Go-live unlock (site)
 
+Full step list: **`ops/paddle-unlock.md`**. Short version:
+
 1. Set both Buy `href`s to the Paddle product / overlay URL.
 2. Remove `aria-disabled="true"` and `tabindex="-1"` from both Buy buttons.
 3. Flip i18n strings: `buy`, `checkout`, `how1`, `faq7_a`, `faq9_a`, `form_ok`, `priv_4` to present tense.
@@ -92,6 +94,7 @@ manual per-order steps above. When checkout is live, prefer:
 2. Separate or same email with the `YN1.…` key from `tools/issue_license.py`.
 3. Later: webhook on `transaction.completed` that issues a key and emails it.
 
+## Code signing (plan)
 
 1. Obtain an Authenticode certificate (EV preferred for SmartScreen).
 2. After `build_exe.ps1` produces `dist\YouNews.exe`, sign:

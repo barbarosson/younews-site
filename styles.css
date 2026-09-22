@@ -624,7 +624,16 @@ main { padding-bottom: 80px; }
 }
 .thanks h2 { margin: 0 0 10px; }
 .thanks .btn { margin-top: 8px; }
-.form-err { color: #f08888; }
+.form-err { color: #f08888; margin-top: 8px; }
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
 
 footer {
   border-top: 1px solid var(--line);
