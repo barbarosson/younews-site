@@ -677,10 +677,29 @@ footer {
   body::after {
     opacity: 0.85;
   }
-  .hero, .desk-body, .grid, .steps, .contact-grid { grid-template-columns: 1fr; }
-  .desk { margin: 0 auto; }
-  .desk-side { display: none; }
-  .hero-mascot { display: none; }
+  .hero, .grid, .steps, .contact-grid { grid-template-columns: 1fr; }
+  .desk {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .desk-body {
+    grid-template-columns: minmax(84px, 28%) 1fr;
+    min-height: 248px;
+  }
+  .desk-side {
+    display: block;
+    padding: 10px 8px;
+  }
+  .desk-side span {
+    font-size: 0.62rem;
+    padding: 6px 7px;
+  }
+  .hero-mascot {
+    display: block;
+    width: 96px;
+    right: -4px;
+    bottom: -18px;
+  }
   .price-card { flex-direction: column; align-items: flex-start; }
   .header-inner {
     position: relative;
