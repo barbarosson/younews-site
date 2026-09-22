@@ -241,7 +241,7 @@
   }
 
   function applyTheme(theme) {
-    if (theme !== "light" && theme !== "dark") theme = "dark";
+    if (theme !== "light" && theme !== "dark") theme = "light";
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(theme);
     try { localStorage.setItem("younews-theme", theme); } catch (_) {}
@@ -263,7 +263,7 @@
         var saved = localStorage.getItem("younews-theme");
         if (saved === "light" || saved === "dark") return saved;
       } catch (_) {}
-      return document.documentElement.classList.contains("light") ? "light" : "dark";
+      return document.documentElement.classList.contains("dark") ? "dark" : "light";
     })());
     var toggle = document.getElementById("nav-toggle");
     document.querySelectorAll("header nav a").forEach(function (link) {

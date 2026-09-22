@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,620&family=Outfit:wght@400;500;600;700&display=swap");
 
-:root,
 html.dark {
   --bg: #070b11;
   --bg-elev: #0e141d;
@@ -30,6 +29,7 @@ html.dark {
   color-scheme: dark;
 }
 
+:root,
 html.light {
   --bg: #f3efe6;
   --bg-elev: #fffdf8;
