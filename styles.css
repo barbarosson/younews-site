@@ -269,6 +269,18 @@ h1 {
 button.btn { border: 0; cursor: pointer; font: inherit; }
 .btn:hover { background: var(--accent-hover); color: #fff !important; }
 
+a.btn[aria-disabled="true"] {
+  opacity: 0.58;
+  pointer-events: none;
+  cursor: not-allowed;
+  background: #6b7785;
+  color: #fff !important;
+  box-shadow: none;
+}
+html.light a.btn[aria-disabled="true"] {
+  background: #8a93a0;
+}
+
 .btn-ghost {
   border: 1px solid var(--line);
   color: var(--text) !important;
