@@ -27,7 +27,8 @@ html.dark {
   --max: 1760px;
   --gutter: clamp(16px, 2.2vw, 40px);
   --edge-gap: 3mm;
-  --edge-line: rgba(227, 179, 65, 0.35);
+  --frame-pad: 12px;
+  --edge-line: rgba(227, 179, 65, 0.45);
   color-scheme: dark;
 }
 
@@ -56,7 +57,8 @@ html.light {
   --glow-gold: rgba(165, 123, 18, 0.12);
   --shadow: rgba(40, 32, 16, 0.12);
   --edge-gap: 3mm;
-  --edge-line: rgba(165, 123, 18, 0.28);
+  --frame-pad: 12px;
+  --edge-line: rgba(165, 123, 18, 0.4);
   color-scheme: light;
 }
 
@@ -69,13 +71,15 @@ body {
   min-height: 100vh;
   color: var(--text);
   font-family: Outfit, "Segoe UI", system-ui, sans-serif;
+  /* Keep all copy inside the side rails */
+  padding-inline: calc(var(--edge-gap) + 1px + var(--frame-pad));
   background:
     radial-gradient(900px 480px at 80% -10%, var(--glow-blue), transparent 55%),
     radial-gradient(700px 400px at 0% 0%, var(--glow-gold), transparent 50%),
     var(--bg);
 }
 
-/* Thin left/right edge rails — ~3mm inset, no layout impact */
+/* Thin left/right edge rails — ~3mm from the screen */
 body::before,
 body::after {
   content: "";
@@ -666,10 +670,12 @@ footer {
 @media (max-width: 900px) {
   body {
     --edge-gap: max(2px, 2mm);
+    --frame-pad: 8px;
+    --gutter: 12px;
   }
   body::before,
   body::after {
-    opacity: 0.7;
+    opacity: 0.85;
   }
   .hero, .desk-body, .grid, .steps, .contact-grid { grid-template-columns: 1fr; }
   .desk { margin: 0 auto; }
@@ -693,15 +699,16 @@ footer {
     display: none;
     position: fixed;
     top: 56px;
-    left: 0;
-    width: 100%;
+    left: calc(var(--edge-gap) + 1px);
+    right: calc(var(--edge-gap) + 1px);
+    width: auto;
     z-index: 45;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     max-height: calc(100dvh - 56px);
     overflow-y: auto;
-    padding: 8px var(--gutter) 16px;
+    padding: 8px var(--frame-pad) 16px;
     background: var(--nav-bg);
     border-bottom: 1px solid var(--line);
     flex-wrap: nowrap;
