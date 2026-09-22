@@ -34,7 +34,7 @@
     }
   };
 
-  var VISIBLE = 5;
+  var VISIBLE = 4;
   var STEP_MS = 4200;
   var start = 0;
   var timer = 0;

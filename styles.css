@@ -94,9 +94,9 @@ header {
 
 .hero-mascot {
   position: absolute;
-  right: -10px;
-  bottom: -12px;
-  width: 158px;
+  right: -18px;
+  bottom: -28px;
+  width: 124px;
   height: auto;
   z-index: 3;
   pointer-events: none;
@@ -244,7 +244,7 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
 
 .desk-top img { width: 22px; height: 22px; border-radius: 6px; }
 
-.desk-body { display: grid; grid-template-columns: 118px 1fr; min-height: 230px; }
+.desk-body { display: grid; grid-template-columns: 118px 1fr; min-height: 268px; }
 
 .desk-side {
   padding: 12px 10px;
@@ -565,7 +565,7 @@ footer {
   .hero, .desk-body, .grid, .steps, .contact-grid { grid-template-columns: 1fr; }
   .desk { margin: 0 auto; }
   .desk-side { display: none; }
-  .hero-mascot { width: 120px; right: 0; bottom: -6px; }
+  .hero-mascot { width: 104px; right: 0; bottom: -16px; }
   .price-card { flex-direction: column; align-items: flex-start; }
   .header-inner { padding: 10px 0; }
 }
