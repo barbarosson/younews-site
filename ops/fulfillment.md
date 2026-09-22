@@ -83,7 +83,15 @@ YN1.…PASTE_KEY_HERE…
 Happy reading,  
 You News
 
-## Code signing (plan)
+## Automated license keys (future)
+
+Paddle webhook → `issue_license.py` is not wired yet. Until then use the
+manual per-order steps above. When checkout is live, prefer:
+
+1. Paddle fulfillment email with download link (hosted file).
+2. Separate or same email with the `YN1.…` key from `tools/issue_license.py`.
+3. Later: webhook on `transaction.completed` that issues a key and emails it.
+
 
 1. Obtain an Authenticode certificate (EV preferred for SmartScreen).
 2. After `build_exe.ps1` produces `dist\YouNews.exe`, sign:
