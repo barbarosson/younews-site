@@ -26,6 +26,8 @@ html.dark {
   --radius: 16px;
   --max: 1760px;
   --gutter: clamp(16px, 2.2vw, 40px);
+  --edge-gap: 3mm;
+  --edge-line: rgba(227, 179, 65, 0.35);
   color-scheme: dark;
 }
 
@@ -53,6 +55,8 @@ html.light {
   --glow-blue: rgba(26, 95, 208, 0.1);
   --glow-gold: rgba(165, 123, 18, 0.12);
   --shadow: rgba(40, 32, 16, 0.12);
+  --edge-gap: 3mm;
+  --edge-line: rgba(165, 123, 18, 0.28);
   color-scheme: light;
 }
 
@@ -70,6 +74,22 @@ body {
     radial-gradient(700px 400px at 0% 0%, var(--glow-gold), transparent 50%),
     var(--bg);
 }
+
+/* Thin left/right edge rails — ~3mm inset, no layout impact */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: var(--edge-gap);
+  bottom: var(--edge-gap);
+  width: 1px;
+  background: var(--edge-line);
+  pointer-events: none;
+  z-index: 60;
+}
+
+body::before { left: var(--edge-gap); }
+body::after { right: var(--edge-gap); }
 
 img {
   max-width: 100%;
@@ -644,6 +664,13 @@ footer {
 }
 
 @media (max-width: 900px) {
+  body {
+    --edge-gap: max(2px, 2mm);
+  }
+  body::before,
+  body::after {
+    opacity: 0.7;
+  }
   .hero, .desk-body, .grid, .steps, .contact-grid { grid-template-columns: 1fr; }
   .desk { margin: 0 auto; }
   .desk-side { display: none; }
