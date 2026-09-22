@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>(function(){var t="dark";try{var s=localStorage.getItem("younews-theme");if(s==="light"||s==="dark")t=s;}catch(e){}document.documentElement.classList.add(t);})();</script>
   <title data-i18n="title_contact">İletişim — You News</title>
   <link rel="icon" href="assets/you_news_mark.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=15">
-  <script src="i18n.js?v=12" defer></script>
+  <link rel="stylesheet" href="styles.css?v=16">
+  <script src="i18n.js?v=13" defer></script>
   <script src="contact.js?v=9" defer></script>
 </head>
 <body>
@@ -30,6 +31,10 @@
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="tr">TR</button>
         <button type="button" data-lang="en">EN</button>
+      </div>
+      <div class="theme" role="group" aria-label="Tema" data-i18n-attr="aria-label:theme_group">
+        <button type="button" data-theme="dark" data-i18n="theme_dark">Koyu</button>
+        <button type="button" data-theme="light" data-i18n="theme_light">Açık</button>
       </div>
       <input id="nav-toggle" class="nav-toggle" type="checkbox">
       <label class="nav-btn" for="nav-toggle" aria-label="Menü" data-i18n-attr="aria-label:nav_menu"><span></span><span></span><span></span></label>

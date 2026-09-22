@@ -11,6 +11,9 @@
       nav_refund: "İade",
       nav_contact: "İletişim",
       nav_menu: "Menü",
+      theme_group: "Tema",
+      theme_dark: "Koyu",
+      theme_light: "Açık",
       kicker: "Windows masaüstü uygulaması",
       hero: "Haber, piyasa ve kısa brifing — hepsi sizin pencerenizde.",
       lead: "You News bir web sitesi değil; bu bilgisayarda durur. Kaynaklarınız, notlarınız ve ayarlarınız evde kalır. Özet veya çeviri isterseniz kendi API anahtarınızı (ya da bilgisayardaki Ollama’yı) bağlarsınız. Size model satmıyoruz.",
@@ -109,6 +112,9 @@
       nav_refund: "Refunds",
       nav_contact: "Contact",
       nav_menu: "Menu",
+      theme_group: "Theme",
+      theme_dark: "Dark",
+      theme_light: "Light",
       kicker: "A Windows desktop app",
       hero: "Headlines, markets, and a short briefing — on your machine.",
       lead: "You News isn’t a site you sign into. It lives on this computer. Your sources, notes, and settings stay here. Want a summary or a translation? Plug in your own API key, or run Ollama at home. We don’t sell you a model.",
@@ -222,6 +228,9 @@
     document.querySelectorAll(".lang button").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
     });
+    document.querySelectorAll(".theme button").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", document.documentElement.classList.contains(btn.dataset.theme) ? "true" : "false");
+    });
     try { localStorage.setItem("younews-lang", lang); } catch (_) {}
     const url = new URL(location.href);
     url.searchParams.set("lang", lang);
@@ -231,11 +240,31 @@
     document.dispatchEvent(new CustomEvent("younews-lang", { detail: lang }));
   }
 
+  function applyTheme(theme) {
+    if (theme !== "light" && theme !== "dark") theme = "dark";
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    try { localStorage.setItem("younews-theme", theme); } catch (_) {}
+    document.querySelectorAll(".theme button").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.dataset.theme === theme ? "true" : "false");
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     apply(detect());
     document.querySelectorAll(".lang button").forEach(function (btn) {
       btn.addEventListener("click", function () { apply(btn.dataset.lang); });
     });
+    document.querySelectorAll(".theme button").forEach(function (btn) {
+      btn.addEventListener("click", function () { applyTheme(btn.dataset.theme); });
+    });
+    applyTheme((function () {
+      try {
+        var saved = localStorage.getItem("younews-theme");
+        if (saved === "light" || saved === "dark") return saved;
+      } catch (_) {}
+      return document.documentElement.classList.contains("light") ? "light" : "dark";
+    })());
     var toggle = document.getElementById("nav-toggle");
     document.querySelectorAll("header nav a").forEach(function (link) {
       link.addEventListener("click", function () {

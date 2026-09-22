@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,620&family=Outfit:wght@400;500;600;700&display=swap");
 
-:root {
+:root,
+html.dark {
   --bg: #070b11;
   --bg-elev: #0e141d;
   --card: #121a24;
@@ -12,9 +13,47 @@
   --accent-hover: #388bfd;
   --line: #1e2a38;
   --ok: #3fb950;
+  --header-bg: rgba(7, 11, 17, 0.92);
+  --nav-bg: rgba(7, 11, 17, 0.98);
+  --desk: #121a25;
+  --desk-2: #0c121a;
+  --desk-side: #0b1118;
+  --desk-chip: #243140;
+  --feed-line: #18222d;
+  --tape-bg: #0a1017;
+  --glow-blue: rgba(31, 111, 235, 0.18);
+  --glow-gold: rgba(227, 179, 65, 0.1);
+  --shadow: rgba(0, 0, 0, 0.45);
   --radius: 16px;
   --max: 1760px;
   --gutter: clamp(16px, 2.2vw, 40px);
+  color-scheme: dark;
+}
+
+html.light {
+  --bg: #f3efe6;
+  --bg-elev: #fffdf8;
+  --card: #ffffff;
+  --text: #1c2430;
+  --muted: #5a6573;
+  --gold: #a57b12;
+  --gold-2: #8a650e;
+  --accent: #1a5fd0;
+  --accent-hover: #1554b8;
+  --line: #ddd4c4;
+  --ok: #1f7a3a;
+  --header-bg: rgba(243, 239, 230, 0.94);
+  --nav-bg: rgba(255, 253, 248, 0.98);
+  --desk: #fffdf8;
+  --desk-2: #f7f2e8;
+  --desk-side: #f1ece1;
+  --desk-chip: #e6dfd0;
+  --feed-line: #ece4d6;
+  --tape-bg: #efe8db;
+  --glow-blue: rgba(26, 95, 208, 0.1);
+  --glow-gold: rgba(165, 123, 18, 0.12);
+  --shadow: rgba(40, 32, 16, 0.12);
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -27,8 +66,8 @@ body {
   color: var(--text);
   font-family: Outfit, "Segoe UI", system-ui, sans-serif;
   background:
-    radial-gradient(900px 480px at 80% -10%, rgba(31, 111, 235, 0.18), transparent 55%),
-    radial-gradient(700px 400px at 0% 0%, rgba(227, 179, 65, 0.1), transparent 50%),
+    radial-gradient(900px 480px at 80% -10%, var(--glow-blue), transparent 55%),
+    radial-gradient(700px 400px at 0% 0%, var(--glow-gold), transparent 50%),
     var(--bg);
 }
 
@@ -51,7 +90,7 @@ header {
   top: 0;
   z-index: 40;
   border-bottom: 1px solid var(--line);
-  background: rgba(7, 11, 17, 0.92);
+  background: var(--header-bg);
   backdrop-filter: blur(18px);
 }
 
@@ -127,14 +166,16 @@ nav a {
 
 nav a:hover, nav a.active { color: var(--text); }
 
-.lang {
+.lang,
+.theme {
   display: inline-flex;
   border: 1px solid var(--line);
   border-radius: 999px;
   overflow: hidden;
 }
 
-.lang button {
+.lang button,
+.theme button {
   appearance: none;
   border: 0;
   background: transparent;
@@ -147,9 +188,10 @@ nav a:hover, nav a.active { color: var(--text); }
   cursor: pointer;
 }
 
-.lang button[aria-pressed="true"] {
+.lang button[aria-pressed="true"],
+.theme button[aria-pressed="true"] {
   background: var(--gold);
-  color: #0b1017;
+  color: var(--bg);
 }
 
 .hero {
@@ -224,8 +266,8 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
   position: relative;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: linear-gradient(180deg, #121a25, #0c121a);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(180deg, var(--desk), var(--desk-2));
+  box-shadow: 0 30px 80px var(--shadow);
   overflow: hidden;
   max-width: min(100%, clamp(460px, 34vw, 620px));
   width: 100%;
@@ -251,7 +293,7 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
 .desk-side {
   padding: 12px 10px;
   border-right: 1px solid var(--line);
-  background: #0b1118;
+  background: var(--desk-side);
 }
 
 .desk-side span {
@@ -259,7 +301,7 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
   padding: 7px 8px;
   margin-bottom: 4px;
   border-radius: 7px;
-  background: #243140;
+  background: var(--desk-chip);
   color: var(--muted);
   font-size: 0.68rem;
   letter-spacing: 0.04em;
@@ -285,7 +327,7 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
   gap: 8px;
   align-items: start;
   padding: 8px 6px;
-  border-bottom: 1px solid #18222d;
+  border-bottom: 1px solid var(--feed-line);
 }
 
 .desk-h {
@@ -307,7 +349,7 @@ button.btn { border: 0; cursor: pointer; font: inherit; }
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   color: var(--ok);
-  background: #0a1017;
+  background: var(--tape-bg);
   white-space: nowrap;
   overflow: hidden;
 }
@@ -619,6 +661,7 @@ footer {
   .brand span { white-space: nowrap; }
   .nav-btn { display: inline-flex; }
   .header-tools { gap: 8px; }
+  .theme button, .lang button { padding: 6px 8px; }
   nav {
     display: none;
     position: fixed;
@@ -632,7 +675,7 @@ footer {
     max-height: calc(100dvh - 56px);
     overflow-y: auto;
     padding: 8px var(--gutter) 16px;
-    background: rgba(7, 11, 17, 0.98);
+    background: var(--nav-bg);
     border-bottom: 1px solid var(--line);
     flex-wrap: nowrap;
   }
