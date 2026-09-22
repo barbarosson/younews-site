@@ -80,6 +80,35 @@ header {
   flex: 0 0 32px;
 }
 
+.brand img.mascot {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-mascot {
+  position: absolute;
+  right: -10px;
+  bottom: -12px;
+  width: 158px;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.5));
+}
+
+.desk-top img.mascot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
 .brand em { font-style: normal; color: var(--gold); }
 
 nav {
@@ -489,6 +518,7 @@ footer {
   .hero, .desk-body, .grid, .steps, .contact-grid { grid-template-columns: 1fr; }
   .desk { margin: 0 auto; }
   .desk-side { display: none; }
+  .hero-mascot { width: 120px; right: 0; bottom: -6px; }
   .price-card { flex-direction: column; align-items: flex-start; }
   .header-inner { padding: 10px 0; }
 }

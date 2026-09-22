@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title data-i18n="title_contact">İletişim — You News</title>
   <link rel="icon" href="assets/you_news_mark.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
   <script src="i18n.js?v=9" defer></script>
   <script src="contact.js?v=9" defer></script>
 </head>
@@ -13,6 +13,7 @@
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="index.html">
+        <img class="mascot" src="assets/you_news_mascot_mark.png" alt="" width="40" height="40">
         <img src="assets/you_news_mark.png" alt="" width="32" height="32">
         <span>YOU <em>NEWS</em></span>
       </a>
@@ -56,7 +57,6 @@
         <p class="note" data-i18n="contact_hours">Hafta içi, Türkiye saati. Önce e-posta yazın; telefona her zaman bakılamayabilir.</p>
       </div>
       <div class="card" id="form-card">
-        <iframe class="fs-frame" name="younews-fs" id="younews-fs" title=" " tabindex="-1" aria-hidden="true"></iframe>
         <form class="form" id="contact-form" action="https://formsubmit.co/hello@younews.media" method="POST" target="younews-fs">
           <input type="hidden" name="_subject" value="You News contact">
           <input type="hidden" name="_captcha" value="false">
@@ -90,5 +90,6 @@
       </nav>
     </div>
   </footer>
+  <iframe class="fs-frame" name="younews-fs" id="younews-fs" title=" " tabindex="-1" aria-hidden="true"></iframe>
 </body>
 </html>
