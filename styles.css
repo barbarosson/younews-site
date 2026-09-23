@@ -156,6 +156,15 @@ header {
   position: relative;
 }
 
+.app-shot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+}
+
 .hero-mascot {
   position: absolute;
   right: -18px;

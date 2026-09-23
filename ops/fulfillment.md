@@ -17,12 +17,14 @@ Full step list: **`ops/paddle-unlock.md`**. Short version:
 
 1. Confirm Paddle payment succeeded (email or dashboard).
 2. Build or grab current `YouNews.exe` (or installer) from the signed release folder.
-3. Issue a key from the app repo:
+3. Issue a key on the machine that has `secrets/license_hmac.txt` (not in git):
 
 ```text
 cd global_news_terminal
 python tools/issue_license.py buyer@email.com
 ```
+
+The issuer script stays on that machine. It is not in the public GitHub tree.
 
 4. Send the customer email below (TR or EN) with:
    - download link (or attachment if small)
