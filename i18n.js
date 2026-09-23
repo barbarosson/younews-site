@@ -267,6 +267,8 @@
       const spec = el.getAttribute("data-i18n-attr").split(":");
       if (pack[spec[1]]) el.setAttribute(spec[0], pack[spec[1]]);
     });
+    var shot = document.getElementById("app-shot");
+    if (shot) shot.src = "assets/app_window_" + (lang === "tr" ? "tr" : "en") + ".png";
     document.querySelectorAll(".lang button").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
     });

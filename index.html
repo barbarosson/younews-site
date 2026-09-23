@@ -19,7 +19,7 @@
   <link rel="icon" href="assets/you_news_mark.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/you_news_mark.png">
   <link rel="stylesheet" href="styles.css?v=23">
-  <script src="i18n.js?v=17" defer></script>
+  <script src="i18n.js?v=18" defer></script>
 </head>
 <body>
   <header>
@@ -70,7 +70,20 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img class="app-shot" src="assets/app_window.png" width="1480" height="900" alt="You News on Windows" data-i18n-attr="alt:proto_cap">
+        <img id="app-shot" class="app-shot" width="1480" height="900" alt="You News on Windows" data-i18n-attr="alt:proto_cap">
+        <script>
+          (function () {
+            var lang = "en";
+            try {
+              var q = new URLSearchParams(location.search).get("lang");
+              var saved = localStorage.getItem("younews-lang");
+              if (q === "tr" || q === "en") lang = q;
+              else if (saved === "tr" || saved === "en") lang = saved;
+              else if ((navigator.language || "").toLowerCase().indexOf("tr") === 0) lang = "tr";
+            } catch (e) {}
+            document.getElementById("app-shot").src = "assets/app_window_" + lang + ".png";
+          })();
+        </script>
         <img class="hero-mascot" src="assets/you_news_mascot.png" alt="" width="180" height="180">
         <p class="desk-caption" data-i18n="proto_cap">Windows’taki You News penceresi. Manşetler bu bilgisayarda kalır.</p>
       </div>
