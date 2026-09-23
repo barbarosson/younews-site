@@ -18,8 +18,8 @@
   <meta name="twitter:image" content="https://younews.media/assets/you_news_lockup.png">
   <link rel="icon" href="assets/you_news_mark.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/you_news_mark.png">
-  <link rel="stylesheet" href="styles.css?v=23">
-  <script src="i18n.js?v=18" defer></script>
+  <link rel="stylesheet" href="styles.css?v=25">
+  <script src="i18n.js?v=19" defer></script>
 </head>
 <body>
   <header>
@@ -33,6 +33,7 @@
       <nav>
         <a class="active" href="index.html" data-i18n="nav_home">Ürün</a>
         <a href="#how" data-i18n="nav_how">Nasıl çalışır</a>
+        <a href="#guide" data-i18n="nav_guide">Rehber</a>
         <a href="#faq" data-i18n="nav_faq">SSS</a>
         <a href="disclaimer.html" data-i18n="nav_disclaimer">Uyarılar</a>
         <a href="privacy.html" data-i18n="nav_privacy">Gizlilik</a>
@@ -121,6 +122,62 @@
           <p data-i18n="how3">Manşetlere bakın, piyasaya göz atın. Özet veya çeviri lazımsa kendi anahtarınızı yazın. Yazmazsanız uygulama yine haber okur.</p>
         </article>
       </div>
+    </section>
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2 data-i18n="guide_t">Tanımlama</h2>
+        <p data-i18n="guide_lead">Dil, kaynak ve takip listesi. Görseller You News penceresinden alındı.</p>
+      </div>
+      <div class="guide">
+        <article>
+          <div>
+            <h3 data-i18n="guide1_t">Dil ve başlangıç paketi</h3>
+            <p data-i18n="guide1">İlk açılışta dil sorulur. Türkiye veya ABD manşet paketini seçin. Kaynakları kendiniz ekleyecekseniz atlayın.</p>
+          </div>
+          <img class="guide-shot" data-shot="wizard" width="720" height="640" alt="Dil ve başlangıç paketi" data-i18n-attr="alt:guide1_t">
+        </article>
+        <article>
+          <div>
+            <h3 data-i18n="guide2_t">Kaynak ekleyin</h3>
+            <p data-i18n="guide2">Ayarlar → Kaynaklar. Ad ve RSS adresi yazın, Test ile manşet geldiğini görün, sonra ekleyin. Yerleşik kaynaklar kapatılır; silinmez.</p>
+          </div>
+          <img class="guide-shot" data-shot="sources" width="720" height="640" alt="Kaynak ekleyin" data-i18n-attr="alt:guide2_t">
+        </article>
+        <article>
+          <div>
+            <h3 data-i18n="guide3_t">Takip listesi</h3>
+            <p data-i18n="guide3">Ayarlar → Ticker'lar. Sembol arayın veya yazın, Sembol ekle ile şeride alın. Seçileni sil ile çıkarın. Fiyatlar Yahoo Finance verisidir; işlem ekranı değildir.</p>
+          </div>
+          <img class="guide-shot" data-shot="tickers" width="720" height="640" alt="Takip listesi" data-i18n-attr="alt:guide3_t">
+        </article>
+        <article>
+          <div>
+            <h3 data-i18n="guide4_t">Okuyun</h3>
+            <p data-i18n="guide4">Soldan konu seçin, ortadaki listeden haberi açın. Yenile (F5) yeni manşetleri çeker.</p>
+          </div>
+          <img class="guide-shot" data-shot="window" width="1480" height="900" alt="Okuyun" data-i18n-attr="alt:guide4_t">
+        </article>
+      </div>
+      <script>
+        (function () {
+          var lang = "en";
+          try {
+            var q = new URLSearchParams(location.search).get("lang");
+            var saved = localStorage.getItem("younews-lang");
+            if (q === "tr" || q === "en") lang = q;
+            else if (saved === "tr" || saved === "en") lang = saved;
+            else if ((navigator.language || "").toLowerCase().indexOf("tr") === 0) lang = "tr";
+          } catch (e) {}
+          var code = lang === "tr" ? "tr" : "en";
+          document.querySelectorAll("img.guide-shot").forEach(function (img) {
+            var name = img.getAttribute("data-shot");
+            if (!name) return;
+            img.src = name === "window"
+              ? "assets/app_window_" + code + ".png"
+              : "assets/guide_" + name + "_" + code + ".png";
+          });
+        })();
+      </script>
     </section>
     <section class="section" id="after">
       <div class="section-head">

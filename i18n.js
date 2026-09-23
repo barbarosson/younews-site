@@ -5,6 +5,7 @@
       desc_home: "You News, bu bilgisayarda çalışan bir haber okuyucu. Listeniz sizde kalır. Yapay zekâ için kendi anahtarınızı kullanırsınız.",
       nav_home: "Ürün",
       nav_how: "Nasıl çalışır",
+      nav_guide: "Rehber",
       nav_faq: "SSS",
       nav_disclaimer: "Uyarılar",
       nav_privacy: "Gizlilik",
@@ -40,6 +41,16 @@
       how2: "Haber sitesi veya RSS adresi yapıştırın. İstemediğiniz kaynağı listede tutmak zorunda değilsiniz.",
       how3_t: "Okuyun, isterseniz sorun",
       how3: "Manşetlere bakın, piyasaya göz atın. Özet veya çeviri lazımsa kendi anahtarınızı yazın. Yazmazsanız uygulama yine haber okur.",
+      guide_t: "Tanımlama",
+      guide_lead: "Dil, kaynak ve takip listesi. Görseller You News penceresinden alındı.",
+      guide1_t: "Dil ve başlangıç paketi",
+      guide1: "İlk açılışta dil sorulur. Türkiye veya ABD manşet paketini seçin. Kaynakları kendiniz ekleyecekseniz atlayın.",
+      guide2_t: "Kaynak ekleyin",
+      guide2: "Ayarlar → Kaynaklar. Ad ve RSS adresi yazın, Test ile manşet geldiğini görün, sonra ekleyin. Yerleşik kaynaklar kapatılır; silinmez.",
+      guide3_t: "Takip listesi",
+      guide3: "Ayarlar → Ticker'lar. Sembol arayın veya yazın, Sembol ekle ile şeride alın. Seçileni sil ile çıkarın. Fiyatlar Yahoo Finance verisidir; işlem ekranı değildir.",
+      guide4_t: "Okuyun",
+      guide4: "Soldan konu seçin, ortadaki listeden haberi açın. Yenile (F5) yeni manşetleri çeker.",
       after_t: "Ödeme sonrası",
       after_lead: "Kasa açılınca sipariş e-postayla tamamlanır. Üç adım.",
       after1_t: "Kurulumu indirin",
@@ -127,6 +138,7 @@
       desc_home: "You News is a Windows app, not a website you log into. Your list stays on this PC. AI uses a key you bring.",
       nav_home: "Product",
       nav_how: "How it works",
+      nav_guide: "Guide",
       nav_faq: "FAQ",
       nav_disclaimer: "Disclaimer",
       nav_privacy: "Privacy",
@@ -162,6 +174,16 @@
       how2: "Paste a news site or an RSS URL. You don’t have to keep a source you don’t care about.",
       how3_t: "Read. Ask only if you want to.",
       how3: "Skim headlines, glance at the tape. Summaries and translation wait until you add a key. Skip that, and it still reads the news.",
+      guide_t: "Set it up",
+      guide_lead: "Language, sources, and the watchlist. These are the real You News windows.",
+      guide1_t: "Language and starter pack",
+      guide1: "The first launch asks for a language. Pick Türkiye or US headlines, or skip and add feeds yourself.",
+      guide2_t: "Add a source",
+      guide2: "Settings → Sources. Enter a name and an RSS URL, press Test to see headlines, then add it. Built-in sources can be turned off; they cannot be deleted.",
+      guide3_t: "Watchlist",
+      guide3: "Settings → Tickers. Search or type a symbol, then Add symbol to put it on the tape. Remove drops the selected row. Prices are Yahoo Finance figures, not a trading screen.",
+      guide4_t: "Read",
+      guide4: "Pick a topic on the left and open a story in the middle. Refresh (F5) pulls new headlines.",
       after_t: "After you pay",
       after_lead: "When checkout is open, the order finishes by email. Three steps.",
       after1_t: "Download the installer",
@@ -269,6 +291,14 @@
     });
     var shot = document.getElementById("app-shot");
     if (shot) shot.src = "assets/app_window_" + (lang === "tr" ? "tr" : "en") + ".png";
+    document.querySelectorAll("img.guide-shot").forEach(function (img) {
+      var name = img.getAttribute("data-shot");
+      if (!name) return;
+      var code = lang === "tr" ? "tr" : "en";
+      img.src = name === "window"
+        ? "assets/app_window_" + code + ".png"
+        : "assets/guide_" + name + "_" + code + ".png";
+    });
     document.querySelectorAll(".lang button").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
     });
