@@ -1,4 +1,20 @@
 (function () {
+  function currentLang() {
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q === "tr" || q === "en") return q;
+      var saved = localStorage.getItem("younews-lang");
+      if (saved === "tr" || saved === "en") return saved;
+    } catch (_) {}
+    return (document.documentElement.lang === "en") ? "en" : "tr";
+  }
+
+  function syncNext() {
+    var next = document.querySelector('input[name="_next"]');
+    if (!next) return;
+    next.value = "https://younews.media/contact.html?sent=1&lang=" + encodeURIComponent(currentLang());
+  }
+
   function showThanks() {
     var formCard = document.getElementById("form-card");
     var thanks = document.getElementById("thanks");
@@ -9,6 +25,7 @@
     try {
       var url = new URL(location.href);
       url.searchParams.set("sent", "1");
+      url.searchParams.set("lang", currentLang());
       url.searchParams.delete("err");
       history.replaceState(null, "", url);
     } catch (_) {}
@@ -23,6 +40,10 @@
       btn.disabled = false;
       var pack = window.__younewsDict;
       if (pack && pack.form_send) btn.textContent = pack.form_send;
+      else {
+        var label = document.querySelector("[data-i18n='form_send']");
+        if (label && label !== btn && label.textContent) btn.textContent = label.textContent;
+      }
     }
   }
 
@@ -36,7 +57,11 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    syncNext();
     if (/[?&]sent=1/.test(location.search)) showThanks();
+    document.addEventListener("younews-lang", function () {
+      syncNext();
+    });
 
     var form = document.getElementById("contact-form");
     var iframe = document.getElementById("younews-fs");
@@ -44,6 +69,7 @@
 
     form.addEventListener("submit", function (e) {
       form.classList.add("tried");
+      syncNext();
       if (!form.checkValidity()) {
         e.preventDefault();
         return;
@@ -56,7 +82,8 @@
       }
 
       var btn = form.querySelector('button[type="submit"]');
-      var original = btn ? btn.textContent : "";
+      var pack = window.__younewsDict;
+      var original = (pack && pack.form_send) || (btn ? btn.textContent : "");
       if (btn) {
         btn.disabled = true;
         btn.textContent = sendingLabel();

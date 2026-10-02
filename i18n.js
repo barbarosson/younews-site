@@ -81,6 +81,8 @@
       faq9_a: "Satış açılınca evet: kurulum ve lisans anahtarı ödeme e-postasına gelir. Şimdilik satış kapalı. Takılırsanız hello@younews.media yazın.",
       faq10_q: "Ne alıyorum?",
       faq10_a: "Windows 10 veya 11 için You News, tek bilgisayara bağlı lisans ve güncellemeler. Yapay zekâ dahil değil; kendi anahtarınız veya Ollama. Mac ve telefon sürümü yok.",
+      faq11_q: "Bilgisayarım yeter mi?",
+      faq11_a: "Windows 10 veya 11, 64 bit. En az 4 GB RAM (8 GB önerilir), internet bağlantısı ve yaklaşık 200 MB boş disk. Yapay zekâ fiyata dahil değil — kendi API anahtarınız veya Ollama gerekir.",
       price_note: "bir kez · tek PC",
       checkout: "Ödemeyi Paddle.com alır. Fiyat dolar cinsindendir; ödeme anında vergi eklenebilir. Sitede ikinci bir satın al düğmesi yok. Onay gelince bu düğme açılır.",
       og_title: "You News — Windows’ta kendi haber masanız",
@@ -99,7 +101,7 @@
       priv_1: "You News Windows’ta çalışır. Haberler, kaynaklar, ayarlar ve notlar sizin bilgisayarınızda kalır. Bunları bir You News bulutuna yüklemiyoruz.",
       priv_2: "Özet ve çeviri, sizin yazdığınız anahtarla o şirketin sunucusuna gider. Ollama seçerseniz bu bilgisayarda kalır. Anahtarı Windows’un kimlik deposuna koyarız. Size sınırsız yapay zekâ satmıyoruz.",
       priv_3: "Piyasa rakamları Yahoo Finance verisinden gelir. RSS, sizin seçtiğiniz yayıncıya gider.",
-      priv_4: "Bu site vitrindir. Satış açılınca ödemeyi Paddle.com alır; kart numarası burada durmaz. Ödeme için Paddle’ın gizlilik metni geçerlidir: https://www.paddle.com/legal/privacy",
+      priv_4: "Bu site vitrindir. Satış açılınca ödemeyi Paddle.com alır; kart numarası burada durmaz. Ödeme için <a href=\"https://www.paddle.com/legal/privacy\" target=\"_blank\" rel=\"noopener\">Paddle gizlilik metni</a> geçerlidir.",
       priv_5: "İletişim formu hello@younews.media adresine gider (FormSubmit). Ad, e-posta ve mesaj yalnızca size dönmek için kullanılır.",
       priv_6: "Tema ve dil seçiminiz yalnızca tarayıcınızda durur. Zorunlu çerez veya takip aracı yok.",
       contact: "Yazın:",
@@ -121,7 +123,7 @@
       form_err: "Mesaj gitmemiş olabilir. Doğrudan hello@younews.media adresine yazın.",
       title_refund: "İade — You News",
       ref_h: "İade",
-      ref_1: "Bu siteden alınan siparişleri Paddle.com yürütür. Paddle.com Merchant of Record’dur: müşteri hizmeti ve iade Paddle’dadır. Paddle destek: https://www.paddle.com/support",
+      ref_1: "Bu siteden alınan siparişleri Paddle.com yürütür. Paddle.com Merchant of Record’dur: müşteri hizmeti ve iade Paddle’dadır. <a href=\"https://www.paddle.com/support\" target=\"_blank\" rel=\"noopener\">Paddle destek</a>.",
       ref_2: "14 gün içinde, lisansı paylaşmadıysanız veya kırmadıysanız hello@younews.media yazın. İade sürecini Paddle yürütür.",
       ref_3: "Fiyat dolar cinsinden listelenir. Paddle, ödeme anında yerel vergi (örneğin KDV) ekleyebilir.",
       title_terms: "Kullanım şartları — You News",
@@ -131,7 +133,8 @@
       terms_3: "Haber metinleri yayıncıya aittir. You News bir okuyucudur; ajans veya içerik satıcısı değildir.",
       terms_4: "Lisansı paylaşmak, kırmak veya yeniden satmak yasaktır. Kötüye kullanımda destek ve iade verilmeyebilir.",
       terms_5: "Bu siteden alışlarda ödemeyi Paddle.com alır (Merchant of Record). İade süresi 14 gündür; ayrıntı iade sayfasında.",
-      copyright: "© You News · younews.media"
+      copyright: "© You News · younews.media",
+      footer_seller: "MODULUSTECH · Küçükbakkalköy Mah. Selvili Sok. No: 4/48 Ataşehir / İstanbul · +90 532 496 58 28 · hello@younews.media"
     },
     en: {
       title_home: "You News — your news desk on Windows",
@@ -214,6 +217,8 @@
       faq9_a: "Once sales are open, yes. The installer and license key arrive in the payment email. Sales are closed for now. If you’re stuck, write to hello@younews.media.",
       faq10_q: "What do I get?",
       faq10_a: "You News for Windows 10 or 11, a license for one PC, and updates. AI is not included. Bring your own key, or use Ollama. No Mac or phone app.",
+      faq11_q: "Will my PC run it?",
+      faq11_a: "Windows 10 or 11, 64-bit. At least 4 GB RAM (8 GB recommended), an internet connection, and about 200 MB free disk. AI is not in the price — bring your own API key or run Ollama.",
       price_note: "once · one PC",
       checkout: "Paddle.com takes the payment. The price is in US dollars, and tax may be added when you pay. There is no second buy button on this site. This one opens after approval.",
       og_title: "You News — your news desk on Windows",
@@ -232,7 +237,7 @@
       priv_1: "You News runs on Windows. Headlines, sources, settings, and notes stay on your computer. We don’t upload them to a You News cloud.",
       priv_2: "A summary or translation goes to the company behind the key you typed. With Ollama, it stays on this PC. We keep the key in Windows. We are not selling you unlimited AI.",
       priv_3: "Market figures come from Yahoo Finance. RSS goes to the publishers you pick.",
-      priv_4: "This website is the shop window. When sales open, Paddle.com takes payment. Card numbers don’t stay here. Paddle’s privacy policy covers checkout: https://www.paddle.com/legal/privacy",
+      priv_4: "This website is the shop window. When sales open, Paddle.com takes payment. Card numbers don’t stay here. See <a href=\"https://www.paddle.com/legal/privacy\" target=\"_blank\" rel=\"noopener\">Paddle’s privacy policy</a> for checkout.",
       priv_5: "The contact form goes to hello@younews.media (via FormSubmit). We use your name, email, and message only to reply.",
       priv_6: "Your theme and language stay in this browser. No required cookies, and no analytics.",
       contact: "Write to us:",
@@ -254,7 +259,7 @@
       form_err: "The message may not have gone through. Write directly to hello@younews.media.",
       title_refund: "Refunds — You News",
       ref_h: "Refunds",
-      ref_1: "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns. Paddle support: https://www.paddle.com/support",
+      ref_1: "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns. <a href=\"https://www.paddle.com/support\" target=\"_blank\" rel=\"noopener\">Paddle support</a>.",
       ref_2: "Within 14 days, if you haven’t shared or cracked the license, email hello@younews.media. Paddle runs the refund.",
       ref_3: "The listed price is in US dollars. Paddle may add local tax, such as VAT, when you pay.",
       title_terms: "Terms — You News",
@@ -264,7 +269,8 @@
       terms_3: "Article text belongs to the publishers. You News is a reader, not a wire service and not a reseller of that writing.",
       terms_4: "Sharing, cracking, or reselling the license is not allowed. If you do, we can refuse support and a refund.",
       terms_5: "Purchases on this site are paid through Paddle.com, the Merchant of Record. The refund window is 14 days. The details are on the refund page.",
-      copyright: "© You News · younews.media"
+      copyright: "© You News · younews.media",
+      footer_seller: "MODULUSTECH · Küçükbakkalköy Mah. Selvili Sok. No: 4/48 Ataşehir / İstanbul · +90 532 496 58 28 · hello@younews.media"
     }
   };
 
@@ -280,10 +286,15 @@
 
   function apply(lang) {
     const pack = dict[lang] || dict.en;
+    window.__younewsDict = pack;
     document.documentElement.lang = lang;
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       const key = el.getAttribute("data-i18n");
       if (pack[key]) el.textContent = pack[key];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      const key = el.getAttribute("data-i18n-html");
+      if (pack[key]) el.innerHTML = pack[key];
     });
     document.querySelectorAll("[data-i18n-attr]").forEach(function (el) {
       const spec = el.getAttribute("data-i18n-attr").split(":");
@@ -309,7 +320,15 @@
     const url = new URL(location.href);
     url.searchParams.set("lang", lang);
     var thanks = document.getElementById("thanks");
-    if (thanks && url.searchParams.get("sent") === "1") thanks.hidden = false;
+    if (thanks && url.searchParams.get("sent") === "1") {
+      thanks.hidden = false;
+      var formCard = document.getElementById("form-card");
+      if (formCard) formCard.hidden = true;
+    }
+    var next = document.querySelector('input[name="_next"]');
+    if (next) {
+      next.value = "https://younews.media/contact.html?sent=1&lang=" + encodeURIComponent(lang);
+    }
     history.replaceState(null, "", url);
     document.dispatchEvent(new CustomEvent("younews-lang", { detail: lang }));
   }

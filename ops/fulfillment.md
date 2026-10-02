@@ -99,7 +99,17 @@ manual per-order steps above. When checkout is live, prefer:
 ## Code signing (plan)
 
 1. Obtain an Authenticode certificate (EV preferred for SmartScreen).
-2. After `build_exe.ps1` produces `dist\YouNews.exe`, sign:
+2. Build with signing env vars set so `build_exe.ps1` signs automatically:
+
+```powershell
+$env:YOU_NEWS_CODESIGN_THUMBPRINT = "<cert SHA1 thumbprint>"
+# or:
+# $env:YOU_NEWS_CODESIGN_PFX = "C:\path\codesign.pfx"
+# $env:YOU_NEWS_CODESIGN_PFX_PASSWORD = "..."
+.\build_exe.ps1
+```
+
+Manual fallback after an unsigned build:
 
 ```powershell
 signtool sign /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 /a dist\YouNews.exe
@@ -107,3 +117,4 @@ signtool sign /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 /a dist\Yo
 
 3. Optional next step: wrap with Inno Setup / MSIX and sign the installer the same way.
 4. Ship only signed builds to customers; keep unsigned CI artifacts internal.
+5. Store packaging uses a local self-signed cert for Partner Center upload only — that is not Authenticode for SmartScreen.

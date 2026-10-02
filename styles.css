@@ -667,9 +667,14 @@ main { padding-bottom: 80px; }
 
 .thanks {
   text-align: left;
+  grid-column: 1 / -1;
 }
 .thanks h2 { margin: 0 0 10px; }
 .thanks .btn { margin-top: 8px; }
+#form-card[hidden],
+#thanks[hidden] {
+  display: none !important;
+}
 .form-err { color: #f08888; margin-top: 8px; }
 .hp {
   position: absolute;
@@ -693,6 +698,21 @@ footer {
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: min(520px, 100%);
+}
+
+.footer-seller {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--muted);
 }
 
 .header-tools {
