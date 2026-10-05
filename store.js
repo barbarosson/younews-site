@@ -1,18 +1,18 @@
 /** Microsoft Store — sole purchase channel for You News. */
 (function () {
-  // Package Family Name from the published MSIX (Partner Center / installed package).
+  var STORE_ID = "9P07VBL4760N";
   var PFN = "MODULUSTECH.YOUNEWS_6w2d1brm94m3m";
-  // Opens the Store app on Windows. Prefer this over a brittle web product id.
-  var STORE_DEEP = "ms-windows-store://pdp/?PFN=" + encodeURIComponent(PFN);
-  // Web fallback (search) when the protocol handler is unavailable.
-  var STORE_WEB =
-    "https://apps.microsoft.com/search?query=" + encodeURIComponent("YOUNEWS MODULUSTECH");
+  // Opens the Store app on Windows.
+  var STORE_DEEP = "ms-windows-store://pdp/?productid=" + STORE_ID;
+  // Public web product page.
+  var STORE_WEB = "https://apps.microsoft.com/detail/" + STORE_ID;
 
   window.YOUNEWS_STORE = {
+    storeId: STORE_ID,
     pfn: PFN,
     deepLink: STORE_DEEP,
     webLink: STORE_WEB,
-    /** Prefer deep link on Windows; otherwise web search. */
+    /** Prefer Store app deep link on Windows; otherwise the web PDP. */
     href: function () {
       try {
         if (/Windows/i.test(navigator.userAgent || "")) return STORE_DEEP;
