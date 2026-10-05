@@ -19,7 +19,8 @@
   <link rel="icon" href="assets/you_news_mark.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/you_news_mark.png">
   <link rel="stylesheet" href="styles.css?v=26">
-  <script src="i18n.js?v=21" defer></script>
+  <script src="i18n.js?v=22" defer></script>
+  <script src="store.js?v=1" defer></script>
 </head>
 <body>
   <header>
@@ -61,13 +62,13 @@
         <h1 data-i18n="hero">Günün haberleri, piyasa ve kısa bir brifing. Hepsi sizin pencerenizde.</h1>
         <p class="lead" data-i18n="lead">You News’e üye olmazsınız. Program bu bilgisayarda durur; okuduğunuz siteler, notlarınız ve ayarlarınız sizde kalır. Bir haberi özetletmek veya çevirmek isterseniz kendi API anahtarınızı ya da evdeki Ollama’yı bağlarsınız. Yapay zekâ ücretin içinde değil.</p>
         <div class="actions">
-          <a class="btn" id="buy" href="#price" aria-disabled="true" tabindex="-1" data-i18n="buy">Yakında satışta · $24.99</a>
+          <a class="btn" id="buy" data-store-buy href="ms-windows-store://pdp/?PFN=MODULUSTECH.YOUNEWS_6w2d1brm94m3m" data-i18n="buy">Microsoft Store’dan al · $24.99</a>
           <a class="btn-ghost" href="disclaimer.html" data-i18n="learn">Satın almadan önce</a>
         </div>
         <div class="stats">
           <div><b data-i18n="stat1_k">Sizde kalır</b><span data-i18n="stat1">Hesap yok, bulut yok</span></div>
           <div><b data-i18n="stat2_k">Bir kez ödeyin</b><span data-i18n="stat2">Tek bilgisayar · Windows 10/11</span></div>
-          <div><b data-i18n="stat3_k">Kart bize gelmez</b><span data-i18n="stat3">Ödemeyi Paddle alır</span></div>
+          <div><b data-i18n="stat3_k">Ödeme Microsoft’ta</b><span data-i18n="stat3">Microsoft Store üzerinden</span></div>
         </div>
       </div>
       <div class="hero-visual">
@@ -111,7 +112,7 @@
       <div class="steps">
         <article>
           <h3 data-i18n="how1_t">Windows’a kurun</h3>
-          <p data-i18n="how1">Satış açılınca kurulum dosyası e-postanıza gelir. Tarayıcı sekmesi değil; Windows’ta kendi penceresi.</p>
+          <p data-i18n="how1">Microsoft Store’dan YOUNEWS’i kurun. Tarayıcı sekmesi değil; Windows’ta kendi penceresi.</p>
         </article>
         <article>
           <h3 data-i18n="how2_t">Okuduğunuz yerleri ekleyin</h3>
@@ -182,20 +183,20 @@
     <section class="section" id="after">
       <div class="section-head">
         <h2 data-i18n="after_t">Satın alınca</h2>
-        <p data-i18n="after_lead">Satış açıldığında kurulum ve anahtar e-postayla gelir. Üç küçük adım.</p>
+        <p data-i18n="after_lead">Satın alma ve kurulum Microsoft Store üzerinden. Üç küçük adım.</p>
       </div>
       <div class="steps">
         <article>
-          <h3 data-i18n="after1_t">Kurulumu indirin</h3>
-          <p data-i18n="after1">Kurulum dosyası ödeme e-postasına düşer. Windows 10 veya 11 bilgisayarınıza kurun.</p>
+          <h3 data-i18n="after1_t">Store’dan kurun</h3>
+          <p data-i18n="after1">Microsoft Store’da YOUNEWS’i bulun, Satın al veya Dene, sonra Yükle. Windows 10 veya 11.</p>
         </article>
         <article>
-          <h3 data-i18n="after2_t">Lisans anahtarını yapıştırın</h3>
-          <p data-i18n="after2">Aynı e-postadaki YN1 anahtarını uygulama açılınca yapıştırın. Anahtar o bilgisayara bağlanır.</p>
+          <h3 data-i18n="after2_t">Microsoft hesabınızla açın</h3>
+          <p data-i18n="after2">YN1 anahtarı gerekmez. Lisans Microsoft hesabınıza bağlıdır; uygulama Store üzerinden açılır.</p>
         </article>
         <article>
-          <h3 data-i18n="after3_t">Bilgisayar değiştirirseniz</h3>
-          <p data-i18n="after3">Önce eski bilgisayarda Ayarlar → Lisans → Bu PC’de kapat. Sonra yeni bilgisayarda aynı anahtarı yazın.</p>
+          <h3 data-i18n="after3_t">Başka bir PC’de</h3>
+          <p data-i18n="after3">Aynı Microsoft hesabıyla Store’dan diğer Windows bilgisayarınıza da kurabilirsiniz. Store kuralları geçerlidir.</p>
         </article>
       </div>
     </section>
@@ -231,15 +232,15 @@
         </details>
         <details>
           <summary data-i18n="faq7_q">Ödemeyi kim alıyor?</summary>
-          <p data-i18n="faq7_a">Ödemeyi Paddle.com alır. Bu sitede tek ödeme yeri odur; kart numaranız bize ulaşmaz. Fiyat dolar cinsindendir. Paddle, ödeme anında KDV gibi bir vergi ekleyebilir.</p>
+          <p data-i18n="faq7_a">Ödemeyi Microsoft Store alır. Kart numaranız bize ulaşmaz. Fiyat ve vergi (KDV vb.) Store’da, bölgenize göre görünür.</p>
         </details>
         <details>
           <summary data-i18n="faq8_q">Beğenmezsem?</summary>
-          <p data-i18n="faq8_a">Bu siteden aldıysanız 14 gün içinde hello@younews.media yazın. Lisansı paylaşmamış veya kırmamış olmanız gerekir. İadeyi Paddle yürütür.</p>
+          <p data-i18n="faq8_a">Satın alma Microsoft Store üzerindenyse iade ve destek Store politikalarına göredir. Uygulama sorunu için hello@younews.media yazın.</p>
         </details>
         <details>
           <summary data-i18n="faq9_q">Dosya hemen iner mi?</summary>
-          <p data-i18n="faq9_a">Satış açılınca evet: kurulum ve lisans anahtarı ödeme e-postasına gelir. Şimdilik satış kapalı. Takılırsanız hello@younews.media yazın.</p>
+          <p data-i18n="faq9_a">Evet — Store’dan Yükle deyince uygulama iner. Ayrı kurulum dosyası veya YN1 anahtarı yok. Takılırsanız hello@younews.media yazın.</p>
         </details>
         <details>
           <summary data-i18n="faq10_q">Ne alıyorum?</summary>
@@ -254,9 +255,9 @@
     <div class="price-card">
       <div>
         <p class="price" id="price">$24.99 <span data-i18n="price_note">bir kez · tek PC</span></p>
-        <p class="note" data-i18n="checkout">Ödemeyi Paddle.com alır. Fiyat dolar cinsindendir; ödeme anında vergi eklenebilir. Sitede ikinci bir satın al düğmesi yok. Onay gelince bu düğme açılır.</p>
+        <p class="note" data-i18n="checkout">Satın alma yalnızca Microsoft Store üzerinden. Fiyat ve vergi Store’da, bölgenize göre görünür. Bu sitede ayrı bir ödeme formu yok.</p>
       </div>
-      <a class="btn" href="#price" aria-disabled="true" tabindex="-1" data-i18n="buy">Yakında satışta · $24.99</a>
+      <a class="btn" data-store-buy href="ms-windows-store://pdp/?PFN=MODULUSTECH.YOUNEWS_6w2d1brm94m3m" data-i18n="buy">Microsoft Store’dan al · $24.99</a>
     </div>
     <h2 data-i18n="important_t">Bir şeyi net söyleyelim</h2>
     <p class="note" data-i18n="important">Manşetler başkalarının emeği. You News bir okuyucu: ajans değil, haber satıcısı değil.</p>
