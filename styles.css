@@ -262,6 +262,26 @@ h1 {
 }
 
 .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.buy-actions { align-items: center; }
+.buy-hint { margin: 10px 0 0; max-width: 40rem; }
+.btn-paddle {
+  background: transparent !important;
+  color: var(--text) !important;
+  border: 1px solid var(--gold);
+}
+.btn-paddle:hover {
+  background: var(--glow-gold) !important;
+  border-color: var(--gold-2);
+  color: var(--text) !important;
+}
+.price-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  min-width: min(100%, 280px);
+}
+.price-actions .btn { width: 100%; }
 
 .btn, .btn-ghost {
   display: inline-flex;
