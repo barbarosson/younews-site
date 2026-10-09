@@ -265,14 +265,24 @@ h1 {
 .buy-actions { align-items: center; }
 .buy-hint { margin: 10px 0 0; max-width: 40rem; }
 .btn-paddle {
-  background: transparent !important;
-  color: var(--text) !important;
-  border: 1px solid var(--gold);
+  background: #1a2330 !important;
+  color: #f5f0e6 !important;
+  border: 2px solid var(--gold) !important;
+  box-shadow: 0 0 0 1px rgba(227, 179, 65, 0.35);
 }
 .btn-paddle:hover {
-  background: var(--glow-gold) !important;
-  border-color: var(--gold-2);
-  color: var(--text) !important;
+  background: #243246 !important;
+  color: #fff !important;
+  border-color: var(--gold-2) !important;
+}
+html.light .btn-paddle {
+  background: #1c2430 !important;
+  color: #fffdf8 !important;
+  border-color: #a57b12 !important;
+}
+html.light .btn-paddle:hover {
+  background: #2a3340 !important;
+  color: #fff !important;
 }
 .price-actions {
   display: flex;

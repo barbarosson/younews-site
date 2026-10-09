@@ -4,9 +4,14 @@
   var ready = false;
   var loading = false;
   var queue = [];
+  var lastError = null;
 
   function cfg() {
     return window.YOUNEWS_PADDLE || {};
+  }
+
+  function tr() {
+    return document.documentElement.lang === "tr";
   }
 
   function loadScript(cb) {
@@ -38,15 +43,25 @@
   function initPaddle() {
     var c = cfg();
     if (!c.clientToken || !window.Paddle) return false;
+    if (ready) return true;
     try {
       if (c.sandbox) window.Paddle.Environment.set("sandbox");
       window.Paddle.Initialize({
         token: c.clientToken,
+        // Light checkout is more readable on both site themes.
         checkout: {
           settings: {
             displayMode: "overlay",
-            theme: document.documentElement.classList.contains("light") ? "light" : "dark",
-            locale: (document.documentElement.lang === "tr" ? "tr" : "en")
+            theme: "light",
+            locale: tr() ? "tr" : "en",
+            successUrl: "https://younews.media/thanks.html"
+          }
+        },
+        eventCallback: function (event) {
+          if (!event || !event.name) return;
+          if (event.name === "checkout.error" || event.name === "checkout.warning") {
+            lastError = event;
+            console.error("Paddle", event.name, event.code || "", event.detail || event);
           }
         }
       });
@@ -58,16 +73,40 @@
     }
   }
 
+  function explainError() {
+    var detail = (lastError && (lastError.detail || lastError.code)) || "";
+    if (tr()) {
+      return (
+        "Paddle ödeme penceresi açılamadı.\n\n" +
+        "Kontrol listesi:\n" +
+        "1) Paddle → Checkout → Default payment link = https://younews.media/checkout.html\n" +
+        "2) Catalog → Prices → Live price id (pri_…) paddle-config.js ile aynı mı?\n" +
+        "3) Website approval: younews.media onaylı mı?\n\n" +
+        (detail ? "Paddle: " + detail : "")
+      );
+    }
+    return (
+      "Paddle checkout failed to open.\n\n" +
+      "Checklist:\n" +
+      "1) Paddle → Checkout → Default payment link = https://younews.media/checkout.html\n" +
+      "2) Catalog → Prices → Live price id (pri_…) matches paddle-config.js\n" +
+      "3) Website approval includes younews.media\n\n" +
+      (detail ? "Paddle: " + detail : "")
+    );
+  }
+
   function openCheckout(ev) {
     if (ev) ev.preventDefault();
     var c = cfg();
+    lastError = null;
+
     if (c.paymentLink && !c.clientToken) {
       window.location.href = c.paymentLink;
       return;
     }
     if (!c.clientToken) {
       alert(
-        document.documentElement.lang === "tr"
+        tr()
           ? "Paddle ödemesi henüz yapılandırılmadı. Microsoft Store’dan alabilir veya hello@younews.media yazabilirsiniz."
           : "Paddle checkout is not configured yet. Use Microsoft Store, or email hello@younews.media."
       );
@@ -77,10 +116,10 @@
       console.error("Missing Paddle priceId");
       return;
     }
+
     loadScript(function () {
-      if (!ready) initPaddle();
-      if (!window.Paddle || !ready) {
-        alert("Paddle could not start. Try again or use Microsoft Store.");
+      if (!initPaddle()) {
+        alert(tr() ? "Paddle başlatılamadı." : "Paddle could not start.");
         return;
       }
       try {
@@ -88,14 +127,18 @@
           items: [{ priceId: c.priceId, quantity: 1 }],
           settings: {
             displayMode: "overlay",
-            theme: document.documentElement.classList.contains("light") ? "light" : "dark",
-            locale: document.documentElement.lang === "tr" ? "tr" : "en",
+            theme: "light",
+            locale: tr() ? "tr" : "en",
             successUrl: "https://younews.media/thanks.html"
           }
         });
+        // If overlay shows generic failure, surface checklist shortly after.
+        setTimeout(function () {
+          if (lastError) alert(explainError());
+        }, 2200);
       } catch (err) {
         console.error(err);
-        alert("Checkout failed to open. Please try Microsoft Store or contact hello@younews.media.");
+        alert(explainError());
       }
     });
   }
@@ -121,17 +164,4 @@
     wire();
   });
   document.addEventListener("younews-lang", wire);
-
-  // Auto-open when landing on default payment link with ?_ptxn=
-  document.addEventListener("DOMContentLoaded", function () {
-    try {
-      var params = new URLSearchParams(location.search);
-      if (!params.get("_ptxn")) return;
-      var c = cfg();
-      if (!c.clientToken) return;
-      loadScript(function () {
-        if (!ready) initPaddle();
-      });
-    } catch (_) {}
-  });
 })();
